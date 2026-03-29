@@ -1,37 +1,12 @@
-import { Canvas } from '@react-three/fiber';
-import { OrbitControls, PerspectiveCamera } from '@react-three/drei';
 import { motion } from 'framer-motion';
-import { Suspense } from 'react';
-import FloatingLaptop from './3d/FloatingLaptop';
-import ParticleField from './3d/ParticleField';
 
 const Hero = () => {
   return (
     <section style={styles.hero}>
-      {/* 3D Background */}
-      <div className="canvas-container">
-        <Canvas>
-          <PerspectiveCamera makeDefault position={[0, 0, 8]} />
-          <ambientLight intensity={0.5} />
-          <directionalLight position={[10, 10, 5]} intensity={1} />
-          <Suspense fallback={null}>
-            <FloatingLaptop />
-            <ParticleField count={800} />
-          </Suspense>
-          <OrbitControls 
-            enableZoom={false} 
-            enablePan={false}
-            maxPolarAngle={Math.PI / 2}
-            minPolarAngle={Math.PI / 2}
-            autoRotate
-            autoRotateSpeed={0.5}
-          />
-        </Canvas>
-      </div>
-
-      {/* Gradient Glows */}
+      {/* Animated Background Gradients instead of 3D */}
       <div style={styles.bgGlow} />
       <div style={styles.bgGlow2} />
+      <div style={styles.bgGlow3} />
 
       {/* Content */}
       <div style={styles.heroContent}>
@@ -114,24 +89,37 @@ const styles = {
   },
   bgGlow: {
     position: 'absolute',
+    width: '800px',
+    height: '800px',
+    borderRadius: '50%',
+    background: 'radial-gradient(circle, rgba(0, 229, 160, 0.08) 0%, transparent 70%)',
+    right: '-200px',
+    top: '50%',
+    transform: 'translateY(-50%)',
+    pointerEvents: 'none',
+    animation: 'float 20s ease-in-out infinite'
+  },
+  bgGlow2: {
+    position: 'absolute',
     width: '600px',
     height: '600px',
     borderRadius: '50%',
-    background: 'radial-gradient(circle, rgba(0, 229, 160, 0.06) 0%, transparent 70%)',
-    right: '-100px',
-    top: '50%',
-    transform: 'translateY(-50%)',
-    pointerEvents: 'none'
+    background: 'radial-gradient(circle, rgba(91, 141, 238, 0.06) 0%, transparent 70%)',
+    left: '-100px',
+    bottom: '10%',
+    pointerEvents: 'none',
+    animation: 'float 15s ease-in-out infinite reverse'
   },
-  bgGlow2: {
+  bgGlow3: {
     position: 'absolute',
     width: '400px',
     height: '400px',
     borderRadius: '50%',
-    background: 'radial-gradient(circle, rgba(91, 141, 238, 0.05) 0%, transparent 70%)',
-    left: '-50px',
-    bottom: 0,
-    pointerEvents: 'none'
+    background: 'radial-gradient(circle, rgba(255, 107, 53, 0.04) 0%, transparent 70%)',
+    right: '20%',
+    bottom: '20%',
+    pointerEvents: 'none',
+    animation: 'float 12s ease-in-out infinite'
   },
   heroContent: {
     maxWidth: '900px',

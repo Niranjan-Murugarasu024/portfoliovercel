@@ -1,8 +1,5 @@
 import { motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
-import { Canvas } from '@react-three/fiber';
-import { Suspense } from 'react';
-import Globe3D from './3d/Globe3D';
 
 const Projects = () => {
   const [ref, inView] = useInView({
@@ -43,13 +40,36 @@ const Projects = () => {
             </div>
           </div>
           <div style={styles.projectVisual3D}>
-            <Canvas>
-              <ambientLight intensity={0.5} />
-              <directionalLight position={[5, 5, 5]} intensity={1} />
-              <Suspense fallback={null}>
-                <Globe3D />
-              </Suspense>
-            </Canvas>
+            <div style={{
+              width: '100%',
+              height: '100%',
+              display: 'flex',
+              alignItems: 'center',
+              justifyContent: 'center',
+              background: 'radial-gradient(circle at center, rgba(0, 229, 160, 0.1), transparent)',
+              position: 'relative'
+            }}>
+              <div style={{
+                width: '200px',
+                height: '200px',
+                borderRadius: '50%',
+                border: '2px solid rgba(0, 229, 160, 0.3)',
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'center',
+                position: 'relative',
+                animation: 'rotate3d 20s linear infinite'
+              }}>
+                <div style={{
+                  fontFamily: 'var(--mono)',
+                  fontSize: '12px',
+                  color: 'var(--accent)',
+                  textAlign: 'center'
+                }}>
+                  GEOPOLITICAL<br/>INTELLIGENCE
+                </div>
+              </div>
+            </div>
           </div>
         </motion.div>
 
