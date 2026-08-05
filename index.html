@@ -459,6 +459,63 @@
 
     .hero-content {
       width: 100%;
+      display: grid;
+      grid-template-columns: 1fr 340px;
+      gap: 48px;
+      align-items: flex-start;
+    }
+
+    .hero-avatar-wrapper {
+      position: relative;
+      display: flex;
+      justify-content: center;
+      margin-top: 8px;
+    }
+
+    .hero-avatar-card {
+      position: relative;
+      width: 100%;
+      max-width: 340px;
+      border-radius: 20px;
+      overflow: hidden;
+      border: 1px solid var(--border-bright);
+      background: var(--surface-card);
+      backdrop-filter: blur(14px);
+      box-shadow: 0 20px 50px rgba(0, 0, 0, 0.8), 0 0 35px rgba(168, 85, 247, 0.25);
+      transition: all 0.35s cubic-bezier(0.22, 1, 0.36, 1);
+    }
+
+    .hero-avatar-card:hover {
+      transform: translateY(-6px) scale(1.02);
+      box-shadow: 0 25px 60px rgba(0, 0, 0, 0.9), 0 0 50px rgba(168, 85, 247, 0.45);
+      border-color: rgba(168, 85, 247, 0.65);
+    }
+
+    .hero-avatar-img {
+      width: 100%;
+      height: auto;
+      aspect-ratio: 3 / 4;
+      object-fit: cover;
+      object-position: center top;
+      display: block;
+    }
+
+    .hero-avatar-badge {
+      position: absolute;
+      bottom: 16px;
+      left: 50%;
+      transform: translateX(-50%);
+      background: rgba(3, 7, 18, 0.88);
+      backdrop-filter: blur(12px);
+      border: 1px solid var(--border-bright);
+      padding: 6px 16px;
+      border-radius: 9999px;
+      font-family: var(--font-mono);
+      font-size: 11px;
+      color: var(--text-main);
+      letter-spacing: 0.08em;
+      white-space: nowrap;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.6);
     }
 
     .status-pill {
@@ -1915,6 +1972,10 @@
         right: 0;
       }
 
+      .hero-content {
+        grid-template-columns: 1fr;
+      }
+
       .metrics-grid {
         grid-template-columns: repeat(2, 1fr);
       }
@@ -2015,51 +2076,62 @@
     <!-- HERO SECTION -->
     <section class="hero" id="hero">
       <div class="hero-content">
-        <div class="status-pill">
-          <span class="status-dot"></span>
-          <span>AVAILABLE FOR ROLES &amp; AI COLLABORATIONS · COIMBATORE, TN [IN]</span>
+        <div>
+          <div class="status-pill">
+            <span class="status-dot"></span>
+            <span>AVAILABLE FOR ROLES &amp; AI COLLABORATIONS · COIMBATORE, TN [IN]</span>
+          </div>
+
+          <h1 class="hero-title">
+            Hi, I'm <span class="gradient-text">Niranjan Murugarasu</span>
+          </h1>
+
+          <div class="hero-subtitle">
+            AI/ML Systems Engineer &amp; Product Builder
+          </div>
+
+          <p class="hero-desc">
+            I'm Niranjan Murugarasu — an AI/ML Systems Engineer &amp; Product Builder bridging deep generative AI
+            capabilities with production-grade backend architecture. From fine-tuned clinical LLMs with deterministic
+            safety guardrails to high-throughput Spring Boot backends and automated triage engines, I build scalable
+            systems that deliver measurable business ROI.
+          </p>
+
+          <!-- TELEMETRY METRICS GRID (4 COLUMNS HORIZONTAL) -->
+          <div class="metrics-grid">
+            <div class="metric-card">
+              <div class="metric-val gradient-text">500+</div>
+              <div class="metric-label">LeetCode Solved</div>
+            </div>
+            <div class="metric-card">
+              <div class="metric-val gradient-text">5</div>
+              <div class="metric-label">Shipped AI Projects</div>
+            </div>
+            <div class="metric-card">
+              <div class="metric-val gradient-text">8.65</div>
+              <div class="metric-label">B.Tech CGPA</div>
+            </div>
+            <div class="metric-card">
+              <div class="metric-val gradient-text">2027</div>
+              <div class="metric-label">Graduation Year</div>
+            </div>
+          </div>
+
+          <div class="hero-cta">
+            <a href="#projects" class="btn-primary">→ See My Work</a>
+            <button id="heroResumeBtn" class="btn-secondary">Resume / CV</button>
+            <a href="#contact" class="btn-secondary">Get In Touch</a>
+          </div>
         </div>
 
-        <h1 class="hero-title">
-          Hi, I'm <span class="gradient-text">Niranjan Murugarasu</span>
-        </h1>
-
-        <div class="hero-subtitle">
-          AI/ML Systems Engineer &amp; Product Builder
-        </div>
-
-        <p class="hero-desc">
-          I'm Niranjan Murugarasu — an AI/ML Systems Engineer &amp; Product Builder bridging deep generative AI
-          capabilities with production-grade backend architecture. From fine-tuned clinical LLMs with deterministic
-          safety guardrails to high-throughput Spring Boot backends and automated triage engines, I build scalable
-          systems that deliver measurable business ROI.
-        </p>
-
-        <!-- TELEMETRY METRICS GRID (4 COLUMNS HORIZONTAL) -->
-        <div class="metrics-grid">
-          <div class="metric-card">
-            <div class="metric-val gradient-text">500+</div>
-            <div class="metric-label">LeetCode Solved</div>
-          </div>
-          <div class="metric-card">
-            <div class="metric-val gradient-text">5</div>
-            <div class="metric-label">Shipped AI Projects</div>
-          </div>
-          <div class="metric-card">
-            <div class="metric-val gradient-text">8.65</div>
-            <div class="metric-label">B.Tech CGPA</div>
-          </div>
-          <div class="metric-card">
-            <div class="metric-val gradient-text">2027</div>
-            <div class="metric-label">Graduation Year</div>
+        <!-- PROFILE AVATAR CARD -->
+        <div class="hero-avatar-wrapper">
+          <div class="hero-avatar-card">
+            <img src="./profile_pic.png" alt="Niranjan Murugarasu — AI/ML Builder" class="hero-avatar-img" />
+            <div class="hero-avatar-badge">⚡ NIRANJAN MURUGARASU</div>
           </div>
         </div>
 
-        <div class="hero-cta">
-          <a href="#projects" class="btn-primary">→ See My Work</a>
-          <button id="heroResumeBtn" class="btn-secondary">Resume / CV</button>
-          <a href="#contact" class="btn-secondary">Get In Touch</a>
-        </div>
       </div>
     </section>
 
