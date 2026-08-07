@@ -1172,106 +1172,183 @@
       color: #22d3ee;
     }
 
-    /* ====================================================
-       TECH STACK MATRIX — LOGO-BASED CATEGORY GRID
+        /* ====================================================
+       TECH STACK MATRIX — PROFESSIONAL HIGH-TECH ARSENAL
        ==================================================== */
+    .stack-subtitle {
+      font-family: var(--font-body);
+      font-size: 15px;
+      color: var(--text-muted);
+      max-width: 680px;
+      margin-top: 8px;
+      margin-bottom: 28px;
+      line-height: 1.6;
+    }
+
+    /* Category Filter Bar */
+    .stack-filter-bar {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-bottom: 32px;
+    }
+
+    .stack-filter-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 9px 20px;
+      background: rgba(17, 24, 39, 0.7);
+      border: 1px solid var(--border);
+      border-radius: 30px;
+      color: var(--text-muted);
+      font-family: var(--font-mono);
+      font-size: 12.5px;
+      font-weight: 500;
+      cursor: pointer;
+      transition: all 0.3s cubic-bezier(0.22, 1, 0.36, 1);
+      backdrop-filter: blur(10px);
+    }
+
+    .stack-filter-btn:hover {
+      border-color: rgba(168, 85, 247, 0.45);
+      color: var(--text-main);
+      background: rgba(168, 85, 247, 0.1);
+      transform: translateY(-2px);
+    }
+
+    .stack-filter-btn.active {
+      background: linear-gradient(135deg, rgba(168, 85, 247, 0.28) 0%, rgba(99, 102, 241, 0.28) 100%);
+      border-color: var(--accent-purple);
+      color: #ffffff;
+      box-shadow: 0 4px 20px rgba(168, 85, 247, 0.3);
+    }
+
+    .filter-icon {
+      font-size: 14px;
+    }
+
+    /* 3D Magnetic Grid */
     .stack-matrix {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
-      gap: 20px;
+      gap: 22px;
+      perspective: 1200px;
     }
 
     .stack-cat-card {
       background: var(--surface-card);
-      backdrop-filter: blur(14px);
+      backdrop-filter: blur(16px);
       border: 1px solid var(--border);
       border-radius: 16px;
-      padding: 24px;
+      padding: 26px;
       position: relative;
       overflow: hidden;
-      transition: border-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+      transform-style: preserve-3d;
+      transition: border-color 0.3s ease, box-shadow 0.3s ease;
+      will-change: transform;
     }
 
-    .stack-cat-card::before {
-      content: '';
+    .card-glare {
       position: absolute;
-      top: 0;
-      left: 0;
-      right: 0;
-      height: 2px;
-      background: var(--cat-accent, var(--gradient-text));
+      inset: 0;
+      border-radius: 16px;
+      pointer-events: none;
       opacity: 0;
+      background: radial-gradient(500px circle at var(--mouse-x, 50%) var(--mouse-y, 50%), rgba(168, 85, 247, 0.16), transparent 45%);
       transition: opacity 0.3s ease;
+      z-index: 1;
     }
 
     .stack-cat-card:hover {
       border-color: var(--border-bright);
-      transform: translateY(-5px);
-      box-shadow: 0 12px 32px rgba(168, 85, 247, 0.18);
+      box-shadow: 0 14px 35px rgba(168, 85, 247, 0.18);
     }
 
-    .stack-cat-card:hover::before {
+    .stack-cat-card:hover .card-glare {
       opacity: 1;
+    }
+
+    .card-3d-layer {
+      transform-style: preserve-3d;
+      position: relative;
+      z-index: 2;
     }
 
     .stack-cat-header {
       display: flex;
       align-items: center;
-      gap: 10px;
-      margin-bottom: 18px;
+      gap: 12px;
+      margin-bottom: 20px;
       padding-bottom: 14px;
       border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+      transform: translateZ(25px);
+      transform-style: preserve-3d;
     }
 
     .stack-cat-icon {
-      width: 34px;
-      height: 34px;
-      border-radius: 8px;
+      width: 38px;
+      height: 38px;
+      border-radius: 10px;
       display: flex;
       align-items: center;
       justify-content: center;
-      font-size: 17px;
+      font-size: 19px;
       flex-shrink: 0;
-      background: rgba(168, 85, 247, 0.12);
-      border: 1px solid rgba(168, 85, 247, 0.25);
+      background: rgba(168, 85, 247, 0.14);
+      border: 1px solid rgba(168, 85, 247, 0.28);
+      transform: translateZ(30px);
+      box-shadow: 0 6px 18px rgba(168, 85, 247, 0.2);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .stack-cat-card:hover .stack-cat-icon {
+      transform: translateZ(40px) scale(1.08);
+      box-shadow: 0 10px 25px rgba(168, 85, 247, 0.4);
     }
 
     .stack-cat-label {
       font-family: var(--font-mono);
-      font-size: 10px;
+      font-size: 11.5px;
       color: var(--accent-purple);
       text-transform: uppercase;
       letter-spacing: 0.1em;
       line-height: 1.3;
+      font-weight: 600;
+      transform: translateZ(18px);
     }
 
-    /* Logo chip grid */
+    /* Tech Chips Grid */
     .tech-chips {
       display: flex;
       flex-wrap: wrap;
-      gap: 8px;
+      gap: 9px;
+      transform-style: preserve-3d;
     }
 
     .tech-chip {
       display: flex;
       align-items: center;
-      gap: 6px;
-      padding: 6px 12px 6px 8px;
+      gap: 7px;
+      padding: 7px 13px 7px 9px;
       background: rgba(255, 255, 255, 0.04);
       border: 1px solid rgba(255, 255, 255, 0.08);
-      border-radius: 8px;
+      border-radius: 9px;
       font-size: 13.5px;
       font-family: var(--font-body);
       font-weight: 500;
       color: var(--text-main);
-      transition: border-color 0.2s ease, background 0.2s ease, transform 0.2s ease;
+      transform: translateZ(15px);
+      transition: transform 0.25s cubic-bezier(0.175, 0.885, 0.32, 1.275), border-color 0.2s ease, background 0.2s ease, box-shadow 0.25s ease;
       cursor: default;
     }
 
     .tech-chip:hover {
-      border-color: rgba(168, 85, 247, 0.4);
-      background: rgba(168, 85, 247, 0.08);
-      transform: translateY(-1px);
+      border-color: rgba(168, 85, 247, 0.45) !important;
+      background: rgba(168, 85, 247, 0.1) !important;
+      transform: translateZ(30px) scale(1.06) !important;
+      box-shadow: 0 6px 20px rgba(168, 85, 247, 0.3) !important;
+      z-index: 10;
     }
 
     .tech-chip img {
@@ -1292,7 +1369,6 @@
       flex-shrink: 0;
     }
 
-    /* concept chips (no logo, subtle style) */
     .tech-chip.concept {
       background: rgba(99, 102, 241, 0.07);
       border-color: rgba(99, 102, 241, 0.18);
@@ -1301,9 +1377,10 @@
     }
 
     .tech-chip.concept:hover {
-      border-color: rgba(99, 102, 241, 0.45);
+      border-color: rgba(99, 102, 241, 0.45) !important;
       color: var(--text-main);
-      background: rgba(99, 102, 241, 0.14);
+      background: rgba(99, 102, 241, 0.16) !important;
+      box-shadow: 0 6px 18px rgba(99, 102, 241, 0.3) !important;
     }
 
     @media (max-width: 1060px) {
@@ -1316,122 +1393,16 @@
       .stack-matrix {
         grid-template-columns: 1fr;
       }
-    }
-
-    /* ---- Stack section scroll-reveal init ---- */
-    .stack-cat-card {
-      will-change: transform, opacity;
-    }
-
-    .tech-chip {
-      will-change: transform, opacity;
-    }
-
-    /* Floating pulse on category icon */
-    @keyframes floatIcon {
-
-      0%,
-      100% {
-        transform: translateY(0px) scale(1);
+      .stack-filter-bar {
+        gap: 8px;
       }
-
-      50% {
-        transform: translateY(-4px) scale(1.07);
+      .stack-filter-btn {
+        padding: 7px 14px;
+        font-size: 11.5px;
       }
     }
 
-    .stack-cat-icon {
-      animation: floatIcon 3.6s ease-in-out infinite;
-    }
-
-    /* Each card gets a slightly different phase */
-    .stack-cat-card:nth-child(2) .stack-cat-icon {
-      animation-delay: 0.6s;
-    }
-
-    .stack-cat-card:nth-child(3) .stack-cat-icon {
-      animation-delay: 1.2s;
-    }
-
-    .stack-cat-card:nth-child(4) .stack-cat-icon {
-      animation-delay: 0.3s;
-    }
-
-    .stack-cat-card:nth-child(5) .stack-cat-icon {
-      animation-delay: 0.9s;
-    }
-
-    .stack-cat-card:nth-child(6) .stack-cat-icon {
-      animation-delay: 1.5s;
-    }
-
-    /* Shimmer sweep on card hover */
-    @keyframes shimmerSweep {
-      0% {
-        background-position: -200% center;
-      }
-
-      100% {
-        background-position: 200% center;
-      }
-    }
-
-    .stack-cat-card::after {
-      content: '';
-      position: absolute;
-      inset: 0;
-      border-radius: 16px;
-      background: linear-gradient(105deg,
-          transparent 40%,
-          rgba(168, 85, 247, 0.06) 50%,
-          transparent 60%);
-      background-size: 200% 100%;
-      opacity: 0;
-      transition: opacity 0.3s ease;
-      pointer-events: none;
-      animation: shimmerSweep 1.4s linear infinite;
-      animation-play-state: paused;
-    }
-
-    .stack-cat-card:hover::after {
-      opacity: 1;
-      animation-play-state: running;
-    }
-
-    /* Chip hover: subtle scale + glow */
-    .tech-chip:hover {
-      box-shadow: 0 0 12px rgba(168, 85, 247, 0.18);
-    }
-
-    .tech-chip.concept:hover {
-      box-shadow: 0 0 10px rgba(99, 102, 241, 0.2);
-    }
-
-    /* Category label colour pulse on hover */
-    .stack-cat-card:hover .stack-cat-label {
-      color: #c084fc;
-      transition: color 0.3s ease;
-    }
-
-    /* Section title glow reveal */
-    #stack .section-title {
-      position: relative;
-      display: inline-block;
-    }
-
-    #stack .section-title::after {
-      content: '';
-      position: absolute;
-      bottom: -6px;
-      left: 0;
-      width: 0%;
-      height: 2px;
-      background: var(--gradient-text);
-      border-radius: 2px;
-      transition: width 1s cubic-bezier(0.22, 1, 0.36, 1);
-    }
-
-    #stack.title-revealed .section-title::after {
+#stack.title-revealed .section-title::after {
       width: 100%;
     }
 
@@ -2277,8 +2248,8 @@
 
     <ul class="nav-links" id="navLinks">
       <li><a href="#about">About</a></li>
-      <li><a href="#projects">Work</a></li>
       <li><a href="#stack">Stack</a></li>
+      <li><a href="#projects">Work</a></li>
       <li><a href="#journey">Journey</a></li>
       <li><a href="#certifications">Credentials</a></li>
       <li><a href="#contact">Contact</a></li>
@@ -2380,7 +2351,205 @@
 
   <div class="container">
 
+        <!-- TECH STACK MATRIX SECTION -->
+    <section id="stack" class="stack-section">
+      <div class="section-header">
+        <span class="section-tag">TECHNICAL ARCHITECTURE</span>
+        <h2 class="section-title">Tech Stack &amp; Core Arsenal</h2>
+        <p class="stack-subtitle">Production-proven frameworks, fine-tuned LLM tooling, distributed backend engines, and core computer science fundamentals.</p>
+      </div>
 
+      <!-- CATEGORY FILTER TABS -->
+      <div class="stack-filter-bar" id="stackFilterBar">
+        <button class="stack-filter-btn active" data-filter="all">
+          <span class="filter-icon">⚡</span> All Arsenal
+        </button>
+        <button class="stack-filter-btn" data-filter="genai">
+          <span class="filter-icon">🧠</span> GenAI / LLMs
+        </button>
+        <button class="stack-filter-btn" data-filter="ml">
+          <span class="filter-icon">📊</span> ML &amp; Data Science
+        </button>
+        <button class="stack-filter-btn" data-filter="cloud">
+          <span class="filter-icon">☁️</span> Cloud &amp; MLOps
+        </button>
+        <button class="stack-filter-btn" data-filter="backend">
+          <span class="filter-icon">💻</span> Backend &amp; DBs
+        </button>
+        <button class="stack-filter-btn" data-filter="frameworks">
+          <span class="filter-icon">🛠️</span> Frameworks &amp; Tools
+        </button>
+        <button class="stack-filter-btn" data-filter="core">
+          <span class="filter-icon">⚙️</span> Core CS &amp; Math
+        </button>
+      </div>
+
+      <!-- 3D MAGNETIC CARDS MATRIX GRID -->
+      <div class="stack-matrix">
+
+        <!-- 01 GenAI / LLMs -->
+        <div class="stack-cat-card" data-category="genai">
+          <div class="card-glare"></div>
+          <div class="card-3d-layer">
+            <div class="stack-cat-header">
+              <div class="stack-cat-icon">🧠</div>
+              <span class="stack-cat-label">GenAI &amp; LLMs</span>
+            </div>
+            <div class="tech-chips">
+              <span class="tech-chip">
+                <span class="chip-icon">✨</span>
+                Prompt Engineering
+              </span>
+              <span class="tech-chip concept">LLM Evaluation &amp; Validation</span>
+              <span class="tech-chip concept">RAG Architecture</span>
+              <span class="tech-chip concept">Vector Databases</span>
+              <span class="tech-chip concept">LoRA / QLoRA Fine-Tuning</span>
+              <span class="tech-chip">
+                <span class="chip-icon">🤗</span>
+                Hugging Face Transformers
+              </span>
+            </div>
+          </div>
+        </div>
+
+        <!-- 02 ML / Data Science -->
+        <div class="stack-cat-card" data-category="ml">
+          <div class="card-glare"></div>
+          <div class="card-3d-layer">
+            <div class="stack-cat-header">
+              <div class="stack-cat-icon">📊</div>
+              <span class="stack-cat-label">ML &amp; Data Science</span>
+            </div>
+            <div class="tech-chips">
+              <span class="tech-chip">
+                <img src="https://cdn.simpleicons.org/pytorch/EE4C2C" alt="PyTorch" />
+                PyTorch
+              </span>
+              <span class="tech-chip">
+                <img src="https://cdn.simpleicons.org/scikitlearn/F7931E" alt="Scikit-learn" />
+                Scikit-learn
+              </span>
+              <span class="tech-chip concept">Supervised &amp; Unsupervised ML</span>
+              <span class="tech-chip concept">NLP Pipelines</span>
+              <span class="tech-chip concept">Feature Engineering</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- 03 Cloud & MLOps -->
+        <div class="stack-cat-card" data-category="cloud">
+          <div class="card-glare"></div>
+          <div class="card-3d-layer">
+            <div class="stack-cat-header">
+              <div class="stack-cat-icon">☁️</div>
+              <span class="stack-cat-label">Cloud &amp; MLOps</span>
+            </div>
+            <div class="tech-chips">
+              <span class="tech-chip">
+                <img src="https://cdn.simpleicons.org/googlecloud/4285F4" alt="GCP" />
+                Google Cloud (GCP)
+              </span>
+              <span class="tech-chip">
+                <img src="https://cdn.simpleicons.org/docker/2496ED" alt="Docker" />
+                Docker Containerization
+              </span>
+              <span class="tech-chip">
+                <img src="https://cdn.simpleicons.org/kubernetes/326CE5" alt="Kubernetes" />
+                Kubernetes
+              </span>
+              <span class="tech-chip concept">Automated CI/CD</span>
+              <span class="tech-chip concept">Model Serving &amp; Deployment</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- 04 Backend & Databases -->
+        <div class="stack-cat-card" data-category="backend">
+          <div class="card-glare"></div>
+          <div class="card-3d-layer">
+            <div class="stack-cat-header">
+              <div class="stack-cat-icon">💻</div>
+              <span class="stack-cat-label">Backend &amp; Databases</span>
+            </div>
+            <div class="tech-chips">
+              <span class="tech-chip">
+                <img src="https://cdn.simpleicons.org/python/3776AB" alt="Python" />
+                Python 3.12+
+              </span>
+              <span class="tech-chip">
+                <img src="https://cdn.simpleicons.org/openjdk/ffffff" alt="Java" />
+                Java 25 / Spring Boot 3
+              </span>
+              <span class="tech-chip">
+                <img src="https://cdn.simpleicons.org/postgresql/4169E1" alt="SQL" />
+                PostgreSQL 17 &amp; SQL
+              </span>
+            </div>
+          </div>
+        </div>
+
+        <!-- 05 Frameworks & Tools -->
+        <div class="stack-cat-card" data-category="frameworks">
+          <div class="card-glare"></div>
+          <div class="card-3d-layer">
+            <div class="stack-cat-header">
+              <div class="stack-cat-icon">🛠️</div>
+              <span class="stack-cat-label">Frameworks &amp; Tools</span>
+            </div>
+            <div class="tech-chips">
+              <span class="tech-chip">
+                <img src="https://cdn.simpleicons.org/fastapi/009688" alt="FastAPI" />
+                FastAPI
+              </span>
+              <span class="tech-chip">
+                <img src="https://cdn.simpleicons.org/streamlit/FF4B4B" alt="Streamlit" />
+                Streamlit
+              </span>
+              <span class="tech-chip">
+                <img src="https://cdn.simpleicons.org/github/ffffff" alt="Git/GitHub" />
+                Git &amp; GitHub
+              </span>
+            </div>
+          </div>
+        </div>
+
+        <!-- 06 Core CS -->
+        <div class="stack-cat-card" data-category="core">
+          <div class="card-glare"></div>
+          <div class="card-3d-layer">
+            <div class="stack-cat-header">
+              <div class="stack-cat-icon">⚙️</div>
+              <span class="stack-cat-label">Core CS Fundamentals</span>
+            </div>
+            <div class="tech-chips">
+              <span class="tech-chip concept">Data Structures &amp; Algorithms</span>
+              <span class="tech-chip concept">Object-Oriented Programming (OOP)</span>
+              <span class="tech-chip concept">Database Management Systems</span>
+              <span class="tech-chip concept">Operating Systems</span>
+              <span class="tech-chip concept">Distributed System Design</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- 07 Mathematics -->
+        <div class="stack-cat-card" data-category="core">
+          <div class="card-glare"></div>
+          <div class="card-3d-layer">
+            <div class="stack-cat-header">
+              <div class="stack-cat-icon">∑</div>
+              <span class="stack-cat-label">Applied Mathematics</span>
+            </div>
+            <div class="tech-chips">
+              <span class="tech-chip concept">Probability &amp; Random Processes</span>
+              <span class="tech-chip concept">Statistical Inference</span>
+              <span class="tech-chip concept">Linear Algebra &amp; Matrices</span>
+              <span class="tech-chip concept">Convex &amp; Mathematical Optimization</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
 
     <!-- WORK / FEATURED PROJECTS -->
     <section id="projects">
@@ -2680,157 +2849,7 @@
 
 
 
-    <!-- STACK BILL OF MATERIALS -->
-    <section id="stack">
-      <div class="section-header">
-        <span class="section-tag">TECH STACK MATRIX</span>
-        <h2 class="section-title">Arsenal &amp; Expertise</h2>
-      </div>
-
-      <div class="stack-matrix">
-
-        <!-- 01 GenAI / LLMs -->
-        <div class="stack-cat-card">
-          <div class="stack-cat-header">
-            <div class="stack-cat-icon">🧠</div>
-            <span class="stack-cat-label">GenAI / LLMs</span>
-          </div>
-          <div class="tech-chips">
-            <span class="tech-chip">
-              <span class="chip-icon">✨</span>
-              Prompt Engineering
-            </span>
-            <span class="tech-chip concept">LLM Output Evaluation &amp; Validation</span>
-            <span class="tech-chip concept">RAG</span>
-            <span class="tech-chip concept">Vector Databases</span>
-            <span class="tech-chip concept">LoRA/QLoRA Fine-Tuning</span>
-            <span class="tech-chip">
-              <span class="chip-icon">🤗</span>
-              Transformers
-            </span>
-          </div>
-        </div>
-
-        <!-- 02 ML / Data Science -->
-        <div class="stack-cat-card">
-          <div class="stack-cat-header">
-            <div class="stack-cat-icon">📊</div>
-            <span class="stack-cat-label">ML / Data Science</span>
-          </div>
-          <div class="tech-chips">
-            <span class="tech-chip">
-              <img src="https://cdn.simpleicons.org/pytorch/EE4C2C" alt="PyTorch" />
-              PyTorch
-            </span>
-            <span class="tech-chip">
-              <img src="https://cdn.simpleicons.org/scikitlearn/F7931E" alt="Scikit-learn" />
-              Scikit-learn
-            </span>
-            <span class="tech-chip concept">Supervised/Unsupervised Learning</span>
-            <span class="tech-chip concept">NLP</span>
-            <span class="tech-chip concept">Feature Engineering</span>
-          </div>
-        </div>
-
-        <!-- 03 Cloud & MLOps -->
-        <div class="stack-cat-card">
-          <div class="stack-cat-header">
-            <div class="stack-cat-icon">☁️</div>
-            <span class="stack-cat-label">Cloud &amp; MLOps</span>
-          </div>
-          <div class="tech-chips">
-            <span class="tech-chip">
-              <img src="https://cdn.simpleicons.org/googlecloud/4285F4" alt="GCP" />
-              GCP
-            </span>
-            <span class="tech-chip">
-              <img src="https://cdn.simpleicons.org/docker/2496ED" alt="Docker" />
-              Docker
-            </span>
-            <span class="tech-chip">
-              <img src="https://cdn.simpleicons.org/kubernetes/326CE5" alt="Kubernetes" />
-              Kubernetes
-            </span>
-            <span class="tech-chip concept">CI/CD</span>
-            <span class="tech-chip concept">Model Deployment</span>
-          </div>
-        </div>
-
-        <!-- 04 Programming & Databases -->
-        <div class="stack-cat-card">
-          <div class="stack-cat-header">
-            <div class="stack-cat-icon">💻</div>
-            <span class="stack-cat-label">Programming &amp; Databases</span>
-          </div>
-          <div class="tech-chips">
-            <span class="tech-chip">
-              <img src="https://cdn.simpleicons.org/python/3776AB" alt="Python" />
-              Python
-            </span>
-            <span class="tech-chip">
-              <img src="https://cdn.simpleicons.org/openjdk/ffffff" alt="Java" />
-              Java
-            </span>
-            <span class="tech-chip">
-              <img src="https://cdn.simpleicons.org/postgresql/4169E1" alt="SQL" />
-              SQL
-            </span>
-          </div>
-        </div>
-
-        <!-- 05 Frameworks & Tools -->
-        <div class="stack-cat-card">
-          <div class="stack-cat-header">
-            <div class="stack-cat-icon">🛠️</div>
-            <span class="stack-cat-label">Frameworks &amp; Tools</span>
-          </div>
-          <div class="tech-chips">
-            <span class="tech-chip">
-              <img src="https://cdn.simpleicons.org/fastapi/009688" alt="FastAPI" />
-              FastAPI
-            </span>
-            <span class="tech-chip">
-              <img src="https://cdn.simpleicons.org/streamlit/FF4B4B" alt="Streamlit" />
-              Streamlit
-            </span>
-            <span class="tech-chip">
-              <img src="https://cdn.simpleicons.org/github/ffffff" alt="Git/GitHub" />
-              Git/GitHub
-            </span>
-          </div>
-        </div>
-
-        <!-- 06 Core CS -->
-        <div class="stack-cat-card">
-          <div class="stack-cat-header">
-            <div class="stack-cat-icon">⚙️</div>
-            <span class="stack-cat-label">Core CS</span>
-          </div>
-          <div class="tech-chips">
-            <span class="tech-chip concept">Data Structures &amp; Algorithms</span>
-            <span class="tech-chip concept">OOPs</span>
-            <span class="tech-chip concept">DBMS</span>
-            <span class="tech-chip concept">Operating Systems</span>
-            <span class="tech-chip concept">System Design</span>
-          </div>
-        </div>
-
-        <!-- 07 Mathematics -->
-        <div class="stack-cat-card">
-          <div class="stack-cat-header">
-            <div class="stack-cat-icon">∑</div>
-            <span class="stack-cat-label">Mathematics</span>
-          </div>
-          <div class="tech-chips">
-            <span class="tech-chip concept">Probability</span>
-            <span class="tech-chip concept">Statistics</span>
-            <span class="tech-chip concept">Linear Algebra</span>
-            <span class="tech-chip concept">Optimization</span>
-          </div>
-        </div>
-
-      </div>
-    </section>
+    
 
     <!-- JOURNEY / TIMELINE (LADDER / RULED-SCALE BORDER SYSTEM WITH GSAP SCRUB) -->
     <section id="journey">
@@ -3073,16 +3092,13 @@
         <span style="font-family: var(--font-mono); font-size: 11px; color: var(--text-dim);">ESC to exit</span>
       </div>
       <div class="cmd-results-list" id="cmdResultsList">
-        <div class="cmd-item" data-target="#hero"><span>🏠 Home &amp; Hero Telemetry</span><span>Jump</span></div>
-        <div class="cmd-item" data-target="#specializations"><span>⚡ What I Do &amp;
-            Specializations</span><span>Jump</span></div>
-        <div class="cmd-item" data-target="#projects"><span>🚀 Shipped Work &amp; Projects</span><span>Jump</span></div>
         <div class="cmd-item" data-target="#stack"><span>🛠️ Tech Stack Matrix</span><span>Jump</span></div>
-        <div class="cmd-item" data-target="#journey"><span>📜 Academic &amp; Career Timeline</span><span>Jump</span></div>
-        <div class="cmd-item" data-target="#certifications"><span>📜 Verified Credentials</span><span>Jump</span></div>
-        <div class="cmd-item" data-target="#activities"><span>🏆 Co-Curricular Activities</span><span>Jump</span></div>
-        <div class="cmd-item" data-target="#contact"><span>📬 Contact &amp; Email</span><span>Jump</span></div>
+        <div class="cmd-item" data-target="#projects"><span>🚀 Shipped Work &amp; Projects</span><span>Jump</span></div>
+        <div class="cmd-item" data-target="#journey"><span>🎓 Engineering Journey</span><span>Jump</span></div>
+        <div class="cmd-item" data-target="#certifications"><span>📜 Credentials &amp; Certs</span><span>Jump</span></div>
+        <div class="cmd-item" data-target="#contact"><span>📬 Contact Information</span><span>Jump</span></div>
       </div>
+    </div>
     </div>
   </div>
 
@@ -3324,24 +3340,23 @@
       if (!prefersReduced) {
         const stackCards = document.querySelectorAll('.stack-cat-card');
 
-        // Set initial hidden state
-        gsap.set(stackCards, { opacity: 0, y: 40, scale: 0.96 });
+        // Set initial hidden state for entrance
+        gsap.set(stackCards, { opacity: 0, y: 35, scale: 0.96 });
 
-        // Staggered card entrance triggered by the matrix wrapper
+        // Staggered card entrance triggered by matrix wrapper
         ScrollTrigger.create({
           trigger: '.stack-matrix',
-          start: 'top 78%',
+          start: 'top 80%',
           onEnter: () => {
             gsap.to(stackCards, {
               opacity: 1,
               y: 0,
               scale: 1,
               duration: 0.6,
-              stagger: 0.1,
+              stagger: 0.08,
               ease: 'power3.out',
               clearProps: 'scale',
               onComplete: () => {
-                // After cards appear, cascade chips inside each card
                 stackCards.forEach((card, ci) => {
                   const chips = card.querySelectorAll('.tech-chip');
                   gsap.set(chips, { opacity: 0, y: 10, scale: 0.88 });
@@ -3350,9 +3365,10 @@
                     y: 0,
                     scale: 1,
                     duration: 0.35,
-                    stagger: 0.055,
-                    delay: ci * 0.04,
-                    ease: 'back.out(1.5)'
+                    stagger: 0.04,
+                    delay: ci * 0.03,
+                    ease: 'back.out(1.5)',
+                    clearProps: 'opacity,y,scale'
                   });
                 });
               }
@@ -3360,36 +3376,77 @@
           }
         });
 
-        // Subtle parallax depth on mouse move over the matrix
-        const matrixEl = document.querySelector('.stack-matrix');
-        if (matrixEl) {
-          matrixEl.addEventListener('mousemove', (e) => {
-            const rect = matrixEl.getBoundingClientRect();
-            const cx = (e.clientX - rect.left) / rect.width - 0.5;
-            const cy = (e.clientY - rect.top) / rect.height - 0.5;
-            stackCards.forEach((card, i) => {
-              const depth = 0.6 + (i % 3) * 0.2;
-              gsap.to(card, {
-                rotateY: cx * 3 * depth,
-                rotateX: -cy * 3 * depth,
-                duration: 0.6,
-                ease: 'power2.out',
-                overwrite: 'auto',
-                transformPerspective: 900
-              });
-            });
-          });
-          matrixEl.addEventListener('mouseleave', () => {
-            gsap.to(stackCards, {
-              rotateX: 0, rotateY: 0,
-              duration: 0.7,
-              ease: 'power3.out',
+        // 3D Magnetic Card Tilt & Glare Spotlighting
+        stackCards.forEach(card => {
+          card.addEventListener('mousemove', (e) => {
+            const rect = card.getBoundingClientRect();
+            const x = e.clientX - rect.left;
+            const y = e.clientY - rect.top;
+
+            card.style.setProperty('--mouse-x', `${x}px`);
+            card.style.setProperty('--mouse-y', `${y}px`);
+
+            const centerX = rect.width / 2;
+            const centerY = rect.height / 2;
+            const rotateX = ((y - centerY) / centerY) * -10;
+            const rotateY = ((x - centerX) / centerX) * 10;
+
+            gsap.to(card, {
+              rotateX: rotateX,
+              rotateY: rotateY,
+              transformPerspective: 1000,
+              ease: 'power1.out',
+              duration: 0.3,
               overwrite: 'auto'
             });
           });
-        }
+
+          card.addEventListener('mouseleave', () => {
+            gsap.to(card, {
+              rotateX: 0,
+              rotateY: 0,
+              ease: 'power2.out',
+              duration: 0.6,
+              overwrite: 'auto'
+            });
+          });
+        });
+
+        // Interactive Category Filter Tabs
+        const filterBtns = document.querySelectorAll('.stack-filter-btn');
+        filterBtns.forEach(btn => {
+          btn.addEventListener('click', () => {
+            filterBtns.forEach(b => b.classList.remove('active'));
+            btn.classList.add('active');
+
+            const cat = btn.getAttribute('data-filter');
+
+            stackCards.forEach(card => {
+              const cardCat = card.getAttribute('data-category');
+              if (cat === 'all' || cardCat === cat) {
+                card.style.display = 'block';
+                gsap.fromTo(card,
+                  { opacity: 0, scale: 0.9, y: 20 },
+                  { opacity: 1, scale: 1, y: 0, duration: 0.4, ease: 'back.out(1.3)', clearProps: 'transform' }
+                );
+              } else {
+                gsap.to(card, {
+                  opacity: 0,
+                  scale: 0.9,
+                  y: -10,
+                  duration: 0.25,
+                  ease: 'power2.in',
+                  onComplete: () => {
+                    card.style.display = 'none';
+                  }
+                });
+              }
+            });
+          });
+        });
       }
-      // ── END TECH STACK ANIMATIONS ─────────────────────────────────────
+
+    // ── END TECH STACK ANIMATIONS ─────────────────────────────────────
     }
 
     // 3. MOBILE NAV DRAWER
