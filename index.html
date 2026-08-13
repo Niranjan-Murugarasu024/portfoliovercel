@@ -1208,6 +1208,20 @@
 
     .filter-icon {
       font-size: 14px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--accent-pink);
+    }
+
+    .filter-icon svg {
+      width: 15px;
+      height: 15px;
+      stroke: currentColor;
+    }
+
+    .stack-filter-btn.active .filter-icon {
+      color: #FFF1F1;
     }
 
     /* 3D Magnetic Grid */
@@ -1282,6 +1296,13 @@
       transform: translateZ(30px);
       box-shadow: 0 6px 18px rgba(111, 0, 255, 0.25);
       transition: transform 0.3s ease, box-shadow 0.3s ease;
+      color: var(--accent-pink);
+    }
+
+    .stack-cat-icon svg {
+      width: 20px;
+      height: 20px;
+      stroke: currentColor;
     }
 
     .stack-cat-card:hover .stack-cat-icon {
@@ -1472,6 +1493,12 @@
       color: var(--accent-pink);
       font-size: 18px;
       flex-shrink: 0;
+    }
+
+    .activity-icon svg {
+      width: 20px;
+      height: 20px;
+      stroke: currentColor;
     }
 
     .activity-content {
@@ -2428,25 +2455,25 @@
       <!-- CATEGORY FILTER TABS -->
       <div class="stack-filter-bar" id="stackFilterBar">
         <button class="stack-filter-btn active" data-filter="all">
-          <span class="filter-icon">⚡</span> All Arsenal
+          <span class="filter-icon"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg></span> All Arsenal
         </button>
         <button class="stack-filter-btn" data-filter="genai">
-          <span class="filter-icon">🧠</span> GenAI / LLMs
+          <span class="filter-icon"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="4" width="16" height="16" rx="2"/><rect x="9" y="9" width="6" height="6"/><path d="M9 1v3M15 1v3M9 20v3M15 20v3M1 9h3M1 15h3M20 9h3M20 15h3"/></svg></span> GenAI / LLMs
         </button>
         <button class="stack-filter-btn" data-filter="ml">
-          <span class="filter-icon">📊</span> ML &amp; Data Science
+          <span class="filter-icon"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 7 13.5 15.5 8.5 10.5 2 17"/><polyline points="16 7 22 7 22 13"/></svg></span> ML &amp; Data Science
         </button>
         <button class="stack-filter-btn" data-filter="cloud">
-          <span class="filter-icon">☁️</span> Cloud &amp; MLOps
+          <span class="filter-icon"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M17.5 19H9a7 7 0 1 1 6.71-9h1.79a4.5 4.5 0 1 1 0 9Z"/></svg></span> Cloud &amp; MLOps
         </button>
         <button class="stack-filter-btn" data-filter="backend">
-          <span class="filter-icon">💻</span> Backend &amp; DBs
+          <span class="filter-icon"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"/><path d="M3 12c0 1.66 4 3 9 3s9-1.34 9-3"/></svg></span> Backend &amp; DBs
         </button>
         <button class="stack-filter-btn" data-filter="frameworks">
-          <span class="filter-icon">🛠️</span> Frameworks &amp; Tools
+          <span class="filter-icon"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg></span> Frameworks &amp; Tools
         </button>
         <button class="stack-filter-btn" data-filter="core">
-          <span class="filter-icon">⚙️</span> Core CS &amp; Math
+          <span class="filter-icon"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg></span> Core CS &amp; Math
         </button>
       </div>
 
@@ -2458,12 +2485,12 @@
           <div class="card-glare"></div>
           <div class="card-3d-layer">
             <div class="stack-cat-header">
-              <div class="stack-cat-icon">🧠</div>
+              <div class="stack-cat-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="4" width="16" height="16" rx="2"/><rect x="9" y="9" width="6" height="6"/><path d="M9 1v3M15 1v3M9 20v3M15 20v3M1 9h3M1 15h3M20 9h3M20 15h3"/></svg></div>
               <span class="stack-cat-label">GenAI &amp; LLMs</span>
             </div>
             <div class="tech-chips">
               <span class="tech-chip">
-                <span class="chip-icon">✨</span>
+                <span class="chip-icon"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="var(--accent-pink)" stroke-width="2"><path d="M12 2l2.4 6.6L21 11l-6.6 2.4L12 20l-2.4-6.6L3 11l6.6-2.4z"/></svg></span>
                 Prompt Engineering
               </span>
               <span class="tech-chip concept">LLM Evaluation &amp; Validation</span>
@@ -2471,7 +2498,7 @@
               <span class="tech-chip concept">Vector Databases</span>
               <span class="tech-chip concept">LoRA / QLoRA Fine-Tuning</span>
               <span class="tech-chip">
-                <span class="chip-icon">🤗</span>
+                <img src="https://cdn.simpleicons.org/huggingface/FFD21E" alt="Hugging Face" />
                 Hugging Face Transformers
               </span>
             </div>
@@ -2483,7 +2510,7 @@
           <div class="card-glare"></div>
           <div class="card-3d-layer">
             <div class="stack-cat-header">
-              <div class="stack-cat-icon">📊</div>
+              <div class="stack-cat-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 7 13.5 15.5 8.5 10.5 2 17"/><polyline points="16 7 22 7 22 13"/></svg></div>
               <span class="stack-cat-label">ML &amp; Data Science</span>
             </div>
             <div class="tech-chips">
@@ -2495,7 +2522,7 @@
                 <img src="https://cdn.simpleicons.org/scikitlearn/F7931E" alt="Scikit-learn" />
                 Scikit-learn
               </span>
-              <span class="tech-chip concept">Supervised &amp; Unsupervised ML</span>
+              <span class="tech-chip concept">Supervised &amp; Unsupervised Learning</span>
               <span class="tech-chip concept">NLP Pipelines</span>
               <span class="tech-chip concept">Feature Engineering</span>
             </div>
@@ -2507,7 +2534,7 @@
           <div class="card-glare"></div>
           <div class="card-3d-layer">
             <div class="stack-cat-header">
-              <div class="stack-cat-icon">☁️</div>
+              <div class="stack-cat-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M17.5 19H9a7 7 0 1 1 6.71-9h1.79a4.5 4.5 0 1 1 0 9Z"/></svg></div>
               <span class="stack-cat-label">Cloud &amp; MLOps</span>
             </div>
             <div class="tech-chips">
@@ -2529,13 +2556,13 @@
           </div>
         </div>
 
-        <!-- 04 Backend & Databases -->
+        <!-- 04 Programming & Databases -->
         <div class="stack-cat-card" data-category="backend">
           <div class="card-glare"></div>
           <div class="card-3d-layer">
             <div class="stack-cat-header">
-              <div class="stack-cat-icon">💻</div>
-              <span class="stack-cat-label">Backend &amp; Databases</span>
+              <div class="stack-cat-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"/><path d="M3 12c0 1.66 4 3 9 3s9-1.34 9-3"/></svg></div>
+              <span class="stack-cat-label">Programming &amp; Databases</span>
             </div>
             <div class="tech-chips">
               <span class="tech-chip">
@@ -2559,7 +2586,7 @@
           <div class="card-glare"></div>
           <div class="card-3d-layer">
             <div class="stack-cat-header">
-              <div class="stack-cat-icon">🛠️</div>
+              <div class="stack-cat-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg></div>
               <span class="stack-cat-label">Frameworks &amp; Tools</span>
             </div>
             <div class="tech-chips">
@@ -2579,35 +2606,35 @@
           </div>
         </div>
 
-        <!-- 06 Core CS -->
+        <!-- 06 Core CS Fundamentals -->
         <div class="stack-cat-card" data-category="core">
           <div class="card-glare"></div>
           <div class="card-3d-layer">
             <div class="stack-cat-header">
-              <div class="stack-cat-icon">⚙️</div>
+              <div class="stack-cat-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg></div>
               <span class="stack-cat-label">Core CS Fundamentals</span>
             </div>
             <div class="tech-chips">
               <span class="tech-chip concept">Data Structures &amp; Algorithms</span>
               <span class="tech-chip concept">Object-Oriented Programming (OOP)</span>
-              <span class="tech-chip concept">Database Management Systems</span>
+              <span class="tech-chip concept">Database Management Systems (DBMS)</span>
               <span class="tech-chip concept">Operating Systems</span>
               <span class="tech-chip concept">Distributed System Design</span>
             </div>
           </div>
         </div>
 
-        <!-- 07 Mathematics -->
+        <!-- 07 Applied Mathematics -->
         <div class="stack-cat-card" data-category="core">
           <div class="card-glare"></div>
           <div class="card-3d-layer">
             <div class="stack-cat-header">
-              <div class="stack-cat-icon">∑</div>
+              <div class="stack-cat-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M18 4H6l6 8-6 8h12"/></svg></div>
               <span class="stack-cat-label">Applied Mathematics</span>
             </div>
             <div class="tech-chips">
               <span class="tech-chip concept">Probability &amp; Random Processes</span>
-              <span class="tech-chip concept">Statistical Inference</span>
+              <span class="tech-chip concept">Statistical Inference &amp; Statistics</span>
               <span class="tech-chip concept">Linear Algebra &amp; Matrices</span>
               <span class="tech-chip concept">Convex &amp; Mathematical Optimization</span>
             </div>
@@ -3056,7 +3083,7 @@
 
       <div class="activities-grid">
         <div class="activity-card">
-          <div class="activity-icon">🤖</div>
+          <div class="activity-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M12 8V4H8"/><rect width="16" height="12" x="4" y="8" rx="2"/><path d="M2 14h2M20 14h2M15 13v2M9 13v2"/></svg></div>
           <div class="activity-content">
             <h3 class="activity-title">Slack Agent Builder Challenge — StalePR</h3>
             <p class="activity-desc">
@@ -3067,7 +3094,7 @@
         </div>
 
         <div class="activity-card">
-          <div class="activity-icon">📰</div>
+          <div class="activity-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M4 22h16a2 2 0 0 0 2-2V4a2 2 0 0 0-2-2H8a2 2 0 0 0-2 2v16a2 2 0 0 1-2 2Zm0 0a2 2 0 0 1-2-2v-9c0-1.1.9-2 2-2h2"/><path d="M18 14h-8M15 18h-5M10 6h8v4h-8Z"/></svg></div>
           <div class="activity-content">
             <h3 class="activity-title">LinkedIn Newsletter Author — "The AI Edge"</h3>
             <p class="activity-desc">
@@ -3078,7 +3105,7 @@
         </div>
 
         <div class="activity-card">
-          <div class="activity-icon">⚙️</div>
+          <div class="activity-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M12.22 2h-.44a2 2 0 0 0-2 2v.18a2 2 0 0 1-1 1.73l-.43.25a2 2 0 0 1-2 0l-.15-.08a2 2 0 0 0-2.73.73l-.22.38a2 2 0 0 0 .73 2.73l.15.1a2 2 0 0 1 1 1.72v.51a2 2 0 0 1-1 1.74l-.15.09a2 2 0 0 0-.73 2.73l.22.38a2 2 0 0 0 2.73.73l.15-.08a2 2 0 0 1 2 0l.43.25a2 2 0 0 1 1 1.73V20a2 2 0 0 0 2 2h.44a2 2 0 0 0 2-2v-.18a2 2 0 0 1 1-1.73l.43-.25a2 2 0 0 1 2 0l.15.08a2 2 0 0 0 2.73-.73l.22-.38a2 2 0 0 0-.73-2.73l-.15-.08a2 2 0 0 1-1-1.74v-.5a2 2 0 0 1 1-1.74l.15-.09a2 2 0 0 0 .73-2.73l-.22-.38a2 2 0 0 0-2.73-.73l-.15.08a2 2 0 0 1-2 0l-.43-.25a2 2 0 0 1-1-1.73V4a2 2 0 0 0-2-2z"/><circle cx="12" cy="12" r="3"/></svg></div>
           <div class="activity-content">
             <h3 class="activity-title">Active Member — Robotics Club</h3>
             <p class="activity-desc">
@@ -3089,7 +3116,7 @@
         </div>
 
         <div class="activity-card">
-          <div class="activity-icon">📄</div>
+          <div class="activity-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7Z"/><path d="M14 2v4a1 1 0 0 0 1 1h4"/><path d="M10 9H8M16 13H8M16 17H8"/></svg></div>
           <div class="activity-content">
             <h3 class="activity-title">Research Paper Presentation — CIT Coimbatore</h3>
             <p class="activity-desc">
@@ -3100,7 +3127,7 @@
         </div>
 
         <div class="activity-card">
-          <div class="activity-icon">☀️</div>
+          <div class="activity-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"/></svg></div>
           <div class="activity-content">
             <h3 class="activity-title">Research Paper Presentation — KPR Institute</h3>
             <p class="activity-desc">
@@ -3111,7 +3138,7 @@
         </div>
 
         <div class="activity-card">
-          <div class="activity-icon">🚀</div>
+          <div class="activity-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M4.5 16.5c-1.5 1.26-2 5-2 5s3.74-.5 5-2c.71-.84.7-2.13-.09-2.91a2.18 2.18 0 0 0-2.91-.09z"/><path d="m12 15-3-3a22 22 0 0 1 2-3.95A12.88 12.88 0 0 1 22 2c0 2.72-.78 7.5-6 11a22.35 22.35 0 0 1-4 2z"/><path d="M9 12H4s.55-3.03 2-4c1.62-1.08 5 0 5 0M12 15v5s3.03-.55 4-2c1.08-1.62 0-5 0-5"/></svg></div>
           <div class="activity-content">
             <h3 class="activity-title">Illuminate Entrepreneurship Bootcamp — E-Cell IIT Bombay</h3>
             <p class="activity-desc">
