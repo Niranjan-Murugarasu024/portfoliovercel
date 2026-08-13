@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="100%" height="100%">
+  <defs>
+    <!-- Portfolio Theme Background Gradient (#090314 -> #130726) -->
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#090314" />
+      <stop offset="100%" stop-color="#130726" />
+    </linearGradient>
+
+    <!-- Monogram Gradient matching Portfolio theme (#FFF1F1 -> #E9B3FB -> #6F00FF) -->
+    <linearGradient id="logoGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FFF1F1" />
+      <stop offset="45%" stop-color="#E9B3FB" />
+      <stop offset="100%" stop-color="#6F00FF" />
+    </linearGradient>
+  </defs>
+
+  <!-- Dark Rounded Card (iOS / Vercel style) -->
+  <rect width="64" height="64" rx="14" fill="url(#bgGrad)" />
+
+  <!-- Iconic Bold Geometric 'N' Monogram -->
+  <path d="M14 16 H22 L38 40 V16 H46 V48 H38 L22 24 V48 H14 Z" fill="url(#logoGrad)" />
+</svg>
