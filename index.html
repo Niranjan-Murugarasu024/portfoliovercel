@@ -4,14 +4,14 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="theme-color" content="#030712">
+  <meta name="theme-color" content="#090314">
   <title>Niranjan Murugarasu — AI/ML Builder &amp; Systems Engineer</title>
   <meta name="description"
     content="Portfolio of Niranjan Murugarasu — AI/ML Systems Engineer & Product Builder based in Coimbatore, India. Specializing in healthcare AI, Java 25 / Spring Boot 3 systems, agentic AI, and fine-tuned LLMs.">
 
   <!-- FAVICON & OPEN GRAPH META TAGS -->
   <link rel="icon" type="image/svg+xml"
-    href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%23090d16'/%3E%3Cpath d='M8 22V10h3l5 7 5-7h3v12h-2.5v-8.5L16 16.5 10.5 13.5V22H8z' fill='%23a855f7'/%3E%3C/svg%3E">
+    href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%23090314'/%3E%3Cpath d='M8 22V10h3l5 7 5-7h3v12h-2.5v-8.5L16 16.5 10.5 13.5V22H8z' fill='%236F00FF'/%3E%3C/svg%3E">
   <meta property="og:type" content="website">
   <meta property="og:title" content="Niranjan Murugarasu — AI/ML Builder &amp; Systems Engineer">
   <meta property="og:description"
@@ -60,27 +60,35 @@
 
   <style>
     :root {
-      /* REDOYANUL + QAZI MAAZ ULTRA DARK PALETTE */
-      --bg: #030712;
-      --bg-alt: #0b0f19;
-      --surface: #111827;
-      --surface-card: rgba(17, 24, 39, 0.75);
-      --border: rgba(255, 255, 255, 0.08);
-      --border-bright: rgba(168, 85, 247, 0.35);
-      --text-main: #f9fafb;
-      --text-muted: #9ca3af;
-      --text-dim: #6b7280;
+      /* HIGH-END PALETTE SYSTEM (#3B0270, #6F00FF, #E9B3FB, #FFF1F1) */
+      --bg: #090314;
+      --bg-alt: #130726;
+      --surface: #1b0933;
+      --surface-card: rgba(27, 9, 51, 0.78);
+      --surface-card-hover: rgba(42, 14, 77, 0.88);
+      --border: rgba(233, 179, 251, 0.14);
+      --border-bright: rgba(111, 0, 255, 0.5);
 
-      --accent-purple: #a855f7;
-      --accent-indigo: #6366f1;
-      --accent-pink: #ec4899;
-      --accent-cyan: #06b6d4;
-      --accent-amber: #f59e0b;
-      --accent-green: #10b981;
+      --text-main: #FFF1F1;
+      --text-muted: #d8c4eb;
+      --text-dim: #a685c9;
 
-      --gradient-text: linear-gradient(135deg, #c084fc 0%, #818cf8 50%, #f472b6 100%);
-      --gradient-btn: linear-gradient(135deg, #a855f7 0%, #6366f1 100%);
-      --glow-purple: 0 0 35px rgba(168, 85, 247, 0.2);
+      --palette-deep-purple: #3B0270;
+      --palette-electric-purple: #6F00FF;
+      --palette-soft-lavender: #E9B3FB;
+      --palette-cream-white: #FFF1F1;
+
+      --accent-purple: #6F00FF;
+      --accent-indigo: #8B30FF;
+      --accent-pink: #E9B3FB;
+      --accent-cyan: #d493f7;
+      --accent-amber: #e9b3fb;
+      --accent-green: #E9B3FB;
+
+      --gradient-text: linear-gradient(135deg, #FFF1F1 0%, #E9B3FB 50%, #6F00FF 100%);
+      --gradient-btn: linear-gradient(135deg, #6F00FF 0%, #3B0270 100%);
+      --glow-purple: 0 0 35px rgba(111, 0, 255, 0.35);
+      --glow-lavender: 0 0 25px rgba(233, 179, 251, 0.25);
 
       --font-display: 'Space Grotesk', sans-serif;
       --font-body: 'Inter', sans-serif;
@@ -99,12 +107,12 @@
 
     html {
       scroll-behavior: smooth;
-      background-color: #030712;
+      background-color: var(--bg);
       color: var(--text-main);
     }
 
     body {
-      background-color: #030712;
+      background-color: var(--bg);
       color: var(--text-main);
       font-family: var(--font-body);
       font-size: 15px;
@@ -137,8 +145,8 @@
       position: fixed;
       inset: 0;
       background-image:
-        linear-gradient(to right, rgba(255, 255, 255, 0.015) 1px, transparent 1px),
-        linear-gradient(to bottom, rgba(255, 255, 255, 0.015) 1px, transparent 1px);
+        linear-gradient(to right, rgba(233, 179, 251, 0.025) 1px, transparent 1px),
+        linear-gradient(to bottom, rgba(233, 179, 251, 0.025) 1px, transparent 1px);
       background-size: 40px 40px, 40px 40px;
       pointer-events: none;
       z-index: 0;
@@ -158,7 +166,7 @@
     .entry-overlay {
       position: fixed;
       inset: 0;
-      background: #030712;
+      background: var(--bg);
       z-index: 99999;
       display: flex;
       flex-direction: column;
@@ -176,7 +184,7 @@
       font-family: var(--font-display);
       font-size: clamp(38px, 6vw, 64px);
       font-weight: 700;
-      color: #ffffff;
+      color: var(--text-main);
       margin-bottom: 32px;
       letter-spacing: -0.02em;
     }
@@ -197,18 +205,18 @@
       display: flex;
       align-items: center;
       justify-content: center;
-      box-shadow: 0 0 30px rgba(168, 85, 247, 0.35), inset 0 0 20px rgba(168, 85, 247, 0.2);
+      box-shadow: 0 0 30px rgba(111, 0, 255, 0.4), inset 0 0 20px rgba(59, 2, 112, 0.6);
       transition: border-color 0.3s ease, box-shadow 0.3s ease;
-      background: #060913;
+      background: #0d041c;
       overflow: visible;
     }
 
     .entry-door-frame:hover {
-      border-color: var(--accent-cyan);
-      box-shadow: 0 0 45px rgba(6, 182, 212, 0.5), inset 0 0 25px rgba(6, 182, 212, 0.3);
+      border-color: var(--accent-pink);
+      box-shadow: 0 0 45px rgba(233, 179, 251, 0.5), inset 0 0 25px rgba(111, 0, 255, 0.4);
     }
 
-    /* MULTILINGUAL GREETING STREAM CONTAINER (DARK HELLO TEXT ON EXPANDING WHITE BG) */
+    /* MULTILINGUAL GREETING STREAM CONTAINER */
     .greeting-stream {
       position: absolute;
       inset: 0;
@@ -218,7 +226,7 @@
       font-family: var(--font-display);
       font-size: 16px;
       font-weight: 800;
-      color: #030712;
+      color: var(--bg);
       opacity: 0;
       pointer-events: none;
       text-align: center;
@@ -231,7 +239,7 @@
     .entry-door-card {
       width: 100%;
       height: 100%;
-      background: rgba(17, 24, 39, 0.96);
+      background: rgba(27, 9, 51, 0.96);
       border-radius: 12px;
       position: relative;
       display: flex;
@@ -251,9 +259,9 @@
     .entry-door-knob {
       width: 12px;
       height: 12px;
-      background: var(--accent-cyan);
+      background: var(--accent-pink);
       border-radius: 50%;
-      box-shadow: 0 0 16px var(--accent-cyan);
+      box-shadow: 0 0 16px var(--accent-pink);
       animation: pulseKnob 2s infinite;
     }
 
@@ -287,10 +295,10 @@
 
     .entry-door-frame:hover+.entry-btn,
     .entry-btn:hover {
-      color: #ffffff;
+      color: var(--text-main);
       border-color: var(--accent-purple);
-      box-shadow: 0 0 25px rgba(168, 85, 247, 0.4);
-      background: rgba(168, 85, 247, 0.15);
+      box-shadow: 0 0 25px rgba(111, 0, 255, 0.4);
+      background: rgba(111, 0, 255, 0.2);
     }
 
     .entry-sub {
@@ -331,7 +339,7 @@
       justify-content: space-between;
       align-items: center;
       padding: 18px max(32px, env(safe-area-inset-right)) 18px max(32px, env(safe-area-inset-left));
-      background: rgba(3, 7, 18, 0.85);
+      background: rgba(9, 3, 20, 0.88);
       backdrop-filter: blur(12px);
       border-bottom: 1px solid var(--border);
       transition: all 0.3s ease;
@@ -351,10 +359,10 @@
 
     .nav-logo-badge {
       padding: 2px 6px;
-      background: rgba(168, 85, 247, 0.15);
-      border: 1px solid rgba(168, 85, 247, 0.4);
+      background: rgba(111, 0, 255, 0.16);
+      border: 1px solid rgba(233, 179, 251, 0.4);
       border-radius: 4px;
-      color: var(--accent-purple);
+      color: var(--accent-pink);
       font-size: 11px;
     }
 
@@ -409,13 +417,13 @@
       border-radius: 8px;
       font-weight: 500;
       cursor: pointer;
-      box-shadow: 0 0 15px rgba(168, 85, 247, 0.3);
+      box-shadow: 0 0 18px rgba(111, 0, 255, 0.4);
       transition: transform 0.2s ease, box-shadow 0.2s ease;
     }
 
     .nav-cta-btn:hover {
       transform: translateY(-2px);
-      box-shadow: 0 0 25px rgba(168, 85, 247, 0.5);
+      box-shadow: 0 0 28px rgba(111, 0, 255, 0.6);
     }
 
     /* MOBILE NAV TOGGLE */
@@ -474,6 +482,15 @@
       margin-top: 8px;
     }
 
+    @keyframes floatAvatar {
+      0%, 100% {
+        transform: translateY(0px) rotate(0deg);
+      }
+      50% {
+        transform: translateY(-12px) rotate(1deg);
+      }
+    }
+
     .hero-avatar-card {
       position: relative;
       width: 100%;
@@ -483,14 +500,17 @@
       border: 1px solid var(--border-bright);
       background: var(--surface-card);
       backdrop-filter: blur(14px);
-      box-shadow: 0 20px 50px rgba(0, 0, 0, 0.8), 0 0 35px rgba(168, 85, 247, 0.25);
+      box-shadow: 0 20px 50px rgba(0, 0, 0, 0.9), 0 0 35px rgba(111, 0, 255, 0.35);
+      animation: floatAvatar 7s ease-in-out infinite;
+      transform-style: preserve-3d;
       transition: all 0.35s cubic-bezier(0.22, 1, 0.36, 1);
     }
 
     .hero-avatar-card:hover {
-      transform: translateY(-6px) scale(1.02);
-      box-shadow: 0 25px 60px rgba(0, 0, 0, 0.9), 0 0 50px rgba(168, 85, 247, 0.45);
-      border-color: rgba(168, 85, 247, 0.65);
+      animation-play-state: paused;
+      transform: translateY(-10px) scale(1.03) rotateX(4deg) rotateY(-4deg);
+      box-shadow: 0 28px 65px rgba(0, 0, 0, 0.95), 0 0 60px rgba(233, 179, 251, 0.6);
+      border-color: rgba(233, 179, 251, 0.75);
     }
 
     .hero-avatar-img {
@@ -507,7 +527,7 @@
       bottom: 16px;
       left: 50%;
       transform: translateX(-50%);
-      background: rgba(3, 7, 18, 0.88);
+      background: rgba(27, 9, 51, 0.92);
       backdrop-filter: blur(12px);
       border: 1px solid var(--border-bright);
       padding: 6px 16px;
@@ -528,7 +548,7 @@
       font-size: 12px;
       color: var(--text-muted);
       padding: 6px 16px;
-      background: rgba(17, 24, 39, 0.8);
+      background: rgba(27, 9, 51, 0.82);
       border: 1px solid var(--border);
       border-radius: 9999px;
       margin-bottom: 28px;
@@ -572,6 +592,10 @@
       font-size: clamp(22px, 3vw, 36px);
       font-weight: 600;
       margin-bottom: 24px;
+      background: linear-gradient(135deg, #E9B3FB 0%, #6F00FF 100%);
+      -webkit-background-clip: text;
+      background-clip: text;
+      -webkit-text-fill-color: transparent;
     }
 
     .hero-desc {
@@ -607,7 +631,7 @@
     .metric-card:hover {
       border-color: var(--border-bright);
       transform: translateY(-4px);
-      box-shadow: 0 10px 25px rgba(168, 85, 247, 0.2);
+      box-shadow: 0 10px 25px rgba(111, 0, 255, 0.25);
     }
 
     .metric-val {
@@ -650,13 +674,13 @@
       justify-content: center;
       gap: 10px;
       cursor: pointer;
-      box-shadow: 0 0 20px rgba(168, 85, 247, 0.3);
+      box-shadow: 0 0 20px rgba(111, 0, 255, 0.4);
       transition: all 0.25s ease;
     }
 
     .btn-primary:hover {
       transform: translateY(-2px);
-      box-shadow: 0 0 30px rgba(168, 85, 247, 0.5);
+      box-shadow: 0 0 32px rgba(111, 0, 255, 0.6);
     }
 
     .btn-secondary {
@@ -665,7 +689,7 @@
       font-weight: 500;
       letter-spacing: 0.05em;
       color: var(--text-main);
-      background: rgba(17, 24, 39, 0.8);
+      background: rgba(27, 9, 51, 0.85);
       border: 1px solid var(--border);
       padding: 14px 28px;
       border-radius: 8px;
@@ -680,13 +704,13 @@
 
     .btn-secondary:hover {
       border-color: var(--border-bright);
-      color: var(--accent-purple);
+      color: var(--accent-pink);
       transform: translateY(-2px);
     }
 
     /* MARQUEE TICKER */
     .ticker {
-      background: rgba(11, 15, 25, 0.9);
+      background: rgba(19, 7, 38, 0.9);
       border-top: 1px solid var(--border);
       border-bottom: 1px solid var(--border);
       padding: 14px 0;
@@ -723,7 +747,7 @@
     }
 
     .ticker-bullet {
-      color: var(--accent-purple);
+      color: var(--accent-pink);
     }
 
     /* SECTIONS BASE */
@@ -739,7 +763,7 @@
     .section-tag {
       font-family: var(--font-mono);
       font-size: 12px;
-      color: var(--accent-purple);
+      color: var(--accent-pink);
       letter-spacing: 0.1em;
       text-transform: uppercase;
       margin-bottom: 8px;
@@ -797,13 +821,13 @@
     .spec-icon {
       width: 48px;
       height: 48px;
-      background: rgba(168, 85, 247, 0.1);
-      border: 1px solid rgba(168, 85, 247, 0.3);
+      background: rgba(111, 0, 255, 0.16);
+      border: 1px solid rgba(233, 179, 251, 0.35);
       border-radius: 12px;
       display: flex;
       align-items: center;
       justify-content: center;
-      color: var(--accent-purple);
+      color: var(--accent-pink);
       font-size: 20px;
       margin-bottom: 20px;
     }
@@ -833,8 +857,8 @@
       font-family: var(--font-mono);
       font-size: 11px;
       padding: 4px 12px;
-      background: rgba(255, 255, 255, 0.04);
-      border: 1px solid var(--border);
+      background: rgba(111, 0, 255, 0.12);
+      border: 1px solid rgba(233, 179, 251, 0.22);
       border-radius: 9999px;
       color: var(--text-muted);
     }
@@ -862,7 +886,7 @@
     }
 
     .project-card-header {
-      background: rgba(3, 7, 18, 0.6);
+      background: rgba(9, 3, 20, 0.7);
       border-bottom: 1px solid var(--border);
       padding: 14px 28px;
       display: flex;
@@ -873,7 +897,7 @@
     }
 
     .project-fig-no {
-      color: var(--accent-purple);
+      color: var(--accent-pink);
       font-weight: 600;
     }
 
@@ -896,8 +920,8 @@
 
     .tab-btn.active,
     .tab-btn:hover {
-      background: rgba(168, 85, 247, 0.15);
-      border-color: rgba(168, 85, 247, 0.4);
+      background: rgba(111, 0, 255, 0.22);
+      border-color: rgba(233, 179, 251, 0.45);
       color: var(--text-main);
     }
 
@@ -928,9 +952,9 @@
       font-family: var(--font-mono);
       font-size: 11px;
       padding: 2px 8px;
-      background: rgba(168, 85, 247, 0.1);
-      border: 1px solid rgba(168, 85, 247, 0.3);
-      color: var(--accent-purple);
+      background: rgba(111, 0, 255, 0.16);
+      border: 1px solid rgba(233, 179, 251, 0.35);
+      color: var(--accent-pink);
       border-radius: 4px;
     }
 
@@ -958,7 +982,7 @@
       content: '▹';
       position: absolute;
       left: 0;
-      color: var(--accent-purple);
+      color: var(--accent-pink);
     }
 
     .project-bullets strong {
@@ -966,32 +990,32 @@
     }
 
     .project-code-box {
-      background: #060913;
-      border: 1px solid var(--border);
+      background: #0d041c;
+      border: 1px solid rgba(233, 179, 251, 0.18);
       border-radius: 12px;
       padding: 20px;
       font-family: var(--font-mono);
       font-size: 12px;
       line-height: 1.6;
-      color: #d1d5db;
+      color: var(--text-main);
       min-height: 180px;
     }
 
     .code-keyword {
-      color: #c084fc;
+      color: #E9B3FB;
       font-weight: 600;
     }
 
     .code-fn {
-      color: #60a5fa;
+      color: #d493f7;
     }
 
     .code-string {
-      color: #f472b6;
+      color: #FFF1F1;
     }
 
     .code-comment {
-      color: #6b7280;
+      color: #a685c9;
       font-style: italic;
     }
 
@@ -1017,7 +1041,7 @@
 
     .ext-link-btn:hover {
       border-color: var(--accent-purple);
-      color: var(--accent-purple);
+      color: var(--accent-pink);
     }
 
     /* ----------------------------------------------------
@@ -1036,7 +1060,7 @@
       bottom: 10px;
       left: 24px;
       width: 2px;
-      background: rgba(255, 255, 255, 0.08);
+      background: rgba(233, 179, 251, 0.1);
       border-radius: 2px;
     }
 
@@ -1047,8 +1071,8 @@
       width: 2px;
       height: 0%;
       /* starts empty, animated by GSAP ScrollTrigger */
-      background: linear-gradient(180deg, var(--accent-purple) 0%, var(--accent-indigo) 100%);
-      box-shadow: 0 0 12px rgba(168, 85, 247, 0.8), 0 0 24px rgba(168, 85, 247, 0.4);
+      background: linear-gradient(180deg, var(--accent-purple) 0%, var(--accent-pink) 100%);
+      box-shadow: 0 0 14px rgba(111, 0, 255, 0.8), 0 0 24px rgba(233, 179, 251, 0.4);
       border-radius: 2px;
       z-index: 2;
       pointer-events: none;
@@ -1072,7 +1096,7 @@
       height: 10px;
       border-radius: 50%;
       background: var(--bg);
-      border: 2px solid rgba(255, 255, 255, 0.2);
+      border: 2px solid rgba(233, 179, 251, 0.3);
       box-shadow: 0 0 0 3px var(--bg);
       transition: all 0.3s ease;
       z-index: 3;
@@ -1081,8 +1105,8 @@
     .journey-item.active-scroll::before,
     .journey-item:hover::before {
       background: var(--accent-purple);
-      border-color: var(--accent-purple);
-      box-shadow: 0 0 0 3px var(--bg), 0 0 12px var(--accent-purple);
+      border-color: var(--accent-pink);
+      box-shadow: 0 0 0 3px var(--bg), 0 0 14px var(--accent-purple);
     }
 
     .journey-tick-label {
@@ -1115,7 +1139,7 @@
     .journey-card:hover {
       border-color: var(--border-bright);
       transform: translateX(6px);
-      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4), 0 0 25px rgba(168, 85, 247, 0.2);
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4), 0 0 25px rgba(111, 0, 255, 0.3);
     }
 
     .timeline-year {
@@ -1161,15 +1185,15 @@
     }
 
     .timeline-type-badge.education {
-      background: rgba(168, 85, 247, 0.12);
-      border: 1px solid rgba(168, 85, 247, 0.35);
-      color: #c084fc;
+      background: rgba(111, 0, 255, 0.18);
+      border: 1px solid rgba(233, 179, 251, 0.35);
+      color: var(--accent-pink);
     }
 
     .timeline-type-badge.internship {
-      background: rgba(6, 182, 212, 0.1);
-      border: 1px solid rgba(6, 182, 212, 0.35);
-      color: #22d3ee;
+      background: rgba(59, 2, 112, 0.35);
+      border: 1px solid rgba(111, 0, 255, 0.45);
+      color: var(--text-main);
     }
 
         /* ====================================================
@@ -1198,7 +1222,7 @@
       align-items: center;
       gap: 8px;
       padding: 9px 20px;
-      background: rgba(17, 24, 39, 0.7);
+      background: rgba(27, 9, 51, 0.72);
       border: 1px solid var(--border);
       border-radius: 30px;
       color: var(--text-muted);
@@ -1211,17 +1235,17 @@
     }
 
     .stack-filter-btn:hover {
-      border-color: rgba(168, 85, 247, 0.45);
+      border-color: rgba(233, 179, 251, 0.45);
       color: var(--text-main);
-      background: rgba(168, 85, 247, 0.1);
+      background: rgba(111, 0, 255, 0.15);
       transform: translateY(-2px);
     }
 
     .stack-filter-btn.active {
-      background: linear-gradient(135deg, rgba(168, 85, 247, 0.28) 0%, rgba(99, 102, 241, 0.28) 100%);
-      border-color: var(--accent-purple);
-      color: #ffffff;
-      box-shadow: 0 4px 20px rgba(168, 85, 247, 0.3);
+      background: linear-gradient(135deg, #6F00FF 0%, #3B0270 100%);
+      border-color: var(--accent-pink);
+      color: #FFF1F1;
+      box-shadow: 0 4px 20px rgba(111, 0, 255, 0.4);
     }
 
     .filter-icon {
@@ -1255,14 +1279,14 @@
       border-radius: 16px;
       pointer-events: none;
       opacity: 0;
-      background: radial-gradient(500px circle at var(--mouse-x, 50%) var(--mouse-y, 50%), rgba(168, 85, 247, 0.16), transparent 45%);
+      background: radial-gradient(500px circle at var(--mouse-x, 50%) var(--mouse-y, 50%), rgba(111, 0, 255, 0.22), transparent 45%);
       transition: opacity 0.3s ease;
       z-index: 1;
     }
 
     .stack-cat-card:hover {
       border-color: var(--border-bright);
-      box-shadow: 0 14px 35px rgba(168, 85, 247, 0.18);
+      box-shadow: 0 14px 35px rgba(111, 0, 255, 0.25);
     }
 
     .stack-cat-card:hover .card-glare {
@@ -1281,7 +1305,7 @@
       gap: 12px;
       margin-bottom: 20px;
       padding-bottom: 14px;
-      border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+      border-bottom: 1px solid rgba(233, 179, 251, 0.12);
       transform: translateZ(25px);
       transform-style: preserve-3d;
     }
@@ -1295,22 +1319,22 @@
       justify-content: center;
       font-size: 19px;
       flex-shrink: 0;
-      background: rgba(168, 85, 247, 0.14);
-      border: 1px solid rgba(168, 85, 247, 0.28);
+      background: rgba(111, 0, 255, 0.18);
+      border: 1px solid rgba(233, 179, 251, 0.3);
       transform: translateZ(30px);
-      box-shadow: 0 6px 18px rgba(168, 85, 247, 0.2);
+      box-shadow: 0 6px 18px rgba(111, 0, 255, 0.25);
       transition: transform 0.3s ease, box-shadow 0.3s ease;
     }
 
     .stack-cat-card:hover .stack-cat-icon {
       transform: translateZ(40px) scale(1.08);
-      box-shadow: 0 10px 25px rgba(168, 85, 247, 0.4);
+      box-shadow: 0 10px 25px rgba(111, 0, 255, 0.45);
     }
 
     .stack-cat-label {
       font-family: var(--font-mono);
       font-size: 11.5px;
-      color: var(--accent-purple);
+      color: var(--accent-pink);
       text-transform: uppercase;
       letter-spacing: 0.1em;
       line-height: 1.3;
@@ -1331,23 +1355,22 @@
       align-items: center;
       gap: 7px;
       padding: 7px 13px 7px 9px;
-      background: rgba(255, 255, 255, 0.04);
-      border: 1px solid rgba(255, 255, 255, 0.08);
-      border-radius: 9px;
+      background: rgba(59, 2, 112, 0.2);
+      border: 1px solid rgba(233, 179, 251, 0.15);
+      border-radius: 9999px;
       font-size: 13.5px;
       font-family: var(--font-body);
       font-weight: 500;
       color: var(--text-main);
-      transform: translateZ(15px);
-      transition: transform 0.25s cubic-bezier(0.175, 0.885, 0.32, 1.275), border-color 0.2s ease, background 0.2s ease, box-shadow 0.25s ease;
-      cursor: default;
+      transition: transform 0.22s ease, border-color 0.2s ease, background 0.2s ease, box-shadow 0.22s ease;
+      cursor: pointer;
     }
 
     .tech-chip:hover {
-      border-color: rgba(168, 85, 247, 0.45) !important;
-      background: rgba(168, 85, 247, 0.1) !important;
-      transform: translateZ(30px) scale(1.06) !important;
-      box-shadow: 0 6px 20px rgba(168, 85, 247, 0.3) !important;
+      border-color: rgba(233, 179, 251, 0.55) !important;
+      background: rgba(111, 0, 255, 0.22) !important;
+      transform: scale(1.08) translateY(-2px) !important;
+      box-shadow: 0 6px 20px rgba(111, 0, 255, 0.4) !important;
       z-index: 10;
     }
 
@@ -1370,17 +1393,18 @@
     }
 
     .tech-chip.concept {
-      background: rgba(99, 102, 241, 0.07);
-      border-color: rgba(99, 102, 241, 0.18);
+      background: rgba(59, 2, 112, 0.25);
+      border-color: rgba(233, 179, 251, 0.18);
       color: var(--text-muted);
       font-size: 13px;
     }
 
     .tech-chip.concept:hover {
-      border-color: rgba(99, 102, 241, 0.45) !important;
+      border-color: rgba(233, 179, 251, 0.55) !important;
       color: var(--text-main);
-      background: rgba(99, 102, 241, 0.16) !important;
-      box-shadow: 0 6px 18px rgba(99, 102, 241, 0.3) !important;
+      background: rgba(111, 0, 255, 0.28) !important;
+      transform: scale(1.08) translateY(-2px) !important;
+      box-shadow: 0 6px 18px rgba(111, 0, 255, 0.45) !important;
     }
 
     @media (max-width: 1060px) {
@@ -1402,7 +1426,7 @@
       }
     }
 
-#stack.title-revealed .section-title::after {
+    #stack.title-revealed .section-title::after {
       width: 100%;
     }
 
@@ -1446,9 +1470,9 @@
       font-family: var(--font-mono);
       font-size: 10px;
       padding: 3px 8px;
-      background: rgba(168, 85, 247, 0.1);
-      border: 1px solid rgba(168, 85, 247, 0.3);
-      color: var(--accent-purple);
+      background: rgba(111, 0, 255, 0.16);
+      border: 1px solid rgba(233, 179, 251, 0.35);
+      color: var(--accent-pink);
       border-radius: 4px;
     }
 
@@ -1475,18 +1499,19 @@
     .activity-card:hover {
       border-color: var(--border-bright);
       transform: translateY(-3px);
-      box-shadow: 0 10px 25px rgba(168, 85, 247, 0.15);
+      box-shadow: 0 10px 25px rgba(111, 0, 255, 0.25);
     }
 
     .activity-icon {
       width: 40px;
       height: 40px;
       border-radius: 10px;
-      background: rgba(168, 85, 247, 0.12);
-      border: 1px solid rgba(168, 85, 247, 0.3);
+      background: rgba(111, 0, 255, 0.16);
+      border: 1px solid rgba(233, 179, 251, 0.35);
       display: flex;
       align-items: center;
       justify-content: center;
+      color: var(--accent-pink);
       font-size: 18px;
       flex-shrink: 0;
     }
@@ -1518,9 +1543,9 @@
       font-family: var(--font-mono);
       font-size: 10px;
       padding: 3px 8px;
-      background: rgba(6, 182, 212, 0.1);
-      border: 1px solid rgba(6, 182, 212, 0.3);
-      color: var(--accent-cyan);
+      background: rgba(59, 2, 112, 0.3);
+      border: 1px solid rgba(233, 179, 251, 0.35);
+      color: var(--accent-pink);
       border-radius: 4px;
       text-transform: uppercase;
       letter-spacing: 0.05em;
@@ -1540,7 +1565,7 @@
     .hobbies-title {
       font-family: var(--font-mono);
       font-size: 12px;
-      color: var(--accent-purple);
+      color: var(--accent-pink);
       margin-bottom: 12px;
       text-transform: uppercase;
       letter-spacing: 0.05em;
@@ -1557,7 +1582,7 @@
       font-family: var(--font-mono);
       font-size: 12px;
       padding: 8px 18px;
-      background: rgba(255, 255, 255, 0.04);
+      background: rgba(59, 2, 112, 0.2);
       border: 1px solid var(--border);
       border-radius: 9999px;
       color: var(--text-main);
@@ -1567,15 +1592,15 @@
 
     .hobby-btn:hover {
       border-color: var(--accent-purple);
-      color: var(--accent-purple);
-      background: rgba(168, 85, 247, 0.1);
+      color: var(--text-main);
+      background: rgba(111, 0, 255, 0.2);
     }
 
     .terminal-output {
       font-family: var(--font-mono);
       font-size: 13px;
-      color: var(--accent-cyan);
-      background: #02050b;
+      color: var(--accent-pink);
+      background: #070210;
       padding: 12px 18px;
       border-radius: 8px;
       border: 1px solid var(--border);
@@ -1619,7 +1644,7 @@
     .cmd-palette-overlay {
       position: fixed;
       inset: 0;
-      background: rgba(3, 7, 18, 0.85);
+      background: rgba(9, 3, 20, 0.88);
       backdrop-filter: blur(8px);
       z-index: 99999;
       display: flex;
@@ -1639,7 +1664,7 @@
     .cmd-palette-container {
       width: 100%;
       max-width: 600px;
-      background: #0b0f19;
+      background: #120625;
       border: 1px solid var(--border-bright);
       border-radius: 14px;
       overflow: hidden;
@@ -1683,7 +1708,7 @@
 
     .cmd-item:hover,
     .cmd-item.selected {
-      background: rgba(168, 85, 247, 0.15);
+      background: rgba(111, 0, 255, 0.2);
       color: var(--text-main);
     }
 
@@ -1694,7 +1719,7 @@
       right: 24px;
       z-index: 99;
       background: var(--gradient-btn);
-      color: #ffffff;
+      color: #FFF1F1;
       border: none;
       padding: 14px 20px;
       border-radius: 9999px;
@@ -1702,7 +1727,7 @@
       font-size: 13px;
       font-weight: 500;
       cursor: pointer;
-      box-shadow: 0 0 25px rgba(168, 85, 247, 0.5);
+      box-shadow: 0 0 25px rgba(111, 0, 255, 0.5);
       display: flex;
       align-items: center;
       gap: 10px;
@@ -1719,10 +1744,10 @@
       right: 24px;
       width: 360px;
       height: 460px;
-      background: #0b0f19;
+      background: #120625;
       border: 1px solid var(--border-bright);
       border-radius: 16px;
-      box-shadow: 0 10px 40px rgba(0, 0, 0, 0.8);
+      box-shadow: 0 10px 40px rgba(0, 0, 0, 0.85);
       z-index: 100;
       display: flex;
       flex-direction: column;
@@ -1740,7 +1765,7 @@
     }
 
     .ai-chat-header {
-      background: rgba(17, 24, 39, 0.9);
+      background: rgba(27, 9, 51, 0.95);
       padding: 14px 18px;
       border-bottom: 1px solid var(--border);
       display: flex;
@@ -1783,16 +1808,16 @@
     }
 
     .chat-msg.bot {
-      background: rgba(168, 85, 247, 0.15);
-      border: 1px solid rgba(168, 85, 247, 0.3);
-      color: #e9d5ff;
+      background: rgba(111, 0, 255, 0.2);
+      border: 1px solid rgba(233, 179, 251, 0.35);
+      color: #FFF1F1;
       align-self: flex-start;
     }
 
     .chat-msg.user {
-      background: rgba(99, 102, 241, 0.2);
-      border: 1px solid rgba(99, 102, 241, 0.4);
-      color: #e0e7ff;
+      background: rgba(59, 2, 112, 0.5);
+      border: 1px solid rgba(111, 0, 255, 0.4);
+      color: #FFF1F1;
       align-self: flex-end;
     }
 
@@ -1805,7 +1830,7 @@
 
     .ai-chat-input {
       flex: 1;
-      background: rgba(255, 255, 255, 0.05);
+      background: rgba(59, 2, 112, 0.25);
       border: 1px solid var(--border);
       border-radius: 8px;
       padding: 8px 12px;
@@ -1830,7 +1855,7 @@
     .resume-modal-overlay {
       position: fixed;
       inset: 0;
-      background: rgba(3, 7, 18, 0.92);
+      background: rgba(9, 3, 20, 0.94);
       backdrop-filter: blur(10px);
       z-index: 9999;
       display: flex;
@@ -1851,7 +1876,7 @@
       width: 100%;
       max-width: 980px;
       height: 86vh;
-      background: var(--surface);
+      background: #120625;
       border: 1px solid var(--border-bright);
       border-radius: 16px;
       display: flex;
@@ -1865,7 +1890,7 @@
       justify-content: space-between;
       align-items: center;
       padding: 16px 24px;
-      background: var(--bg-alt);
+      background: #090314;
       border-bottom: 1px solid var(--border);
     }
 
@@ -2247,7 +2272,7 @@
     </button>
 
     <ul class="nav-links" id="navLinks">
-      <li><a href="#about">About</a></li>
+      <li><a href="#hero">About</a></li>
       <li><a href="#stack">Stack</a></li>
       <li><a href="#projects">Work</a></li>
       <li><a href="#journey">Journey</a></li>
@@ -3376,48 +3401,26 @@
           }
         });
 
-        // 3D Magnetic Card Tilt & Glare Spotlighting
+        // Clean Card Interaction (Card tilt motion removed per request)
         stackCards.forEach(card => {
           card.addEventListener('mousemove', (e) => {
             const rect = card.getBoundingClientRect();
             const x = e.clientX - rect.left;
             const y = e.clientY - rect.top;
-
             card.style.setProperty('--mouse-x', `${x}px`);
             card.style.setProperty('--mouse-y', `${y}px`);
-
-            const centerX = rect.width / 2;
-            const centerY = rect.height / 2;
-            const rotateX = ((y - centerY) / centerY) * -10;
-            const rotateY = ((x - centerX) / centerX) * 10;
-
-            gsap.to(card, {
-              rotateX: rotateX,
-              rotateY: rotateY,
-              transformPerspective: 1000,
-              ease: 'power1.out',
-              duration: 0.3,
-              overwrite: 'auto'
-            });
-          });
-
-          card.addEventListener('mouseleave', () => {
-            gsap.to(card, {
-              rotateX: 0,
-              rotateY: 0,
-              ease: 'power2.out',
-              duration: 0.6,
-              overwrite: 'auto'
-            });
           });
         });
 
         // Interactive Category Filter Tabs
         const filterBtns = document.querySelectorAll('.stack-filter-btn');
         filterBtns.forEach(btn => {
-          btn.addEventListener('click', () => {
+          btn.addEventListener('click', (e) => {
             filterBtns.forEach(b => b.classList.remove('active'));
             btn.classList.add('active');
+
+            // Trigger 3D WebGL background pulse burst
+            if (typeof window.trigger3DPulse === 'function') window.trigger3DPulse(e.clientX, e.clientY);
 
             const cat = btn.getAttribute('data-filter');
 
@@ -3570,6 +3573,10 @@
           e.stopPropagation();
           buttons.forEach(b => b.classList.remove('active'));
           btn.classList.add('active');
+
+          // Trigger 3D WebGL background pulse burst
+          if (typeof window.trigger3DPulse === 'function') window.trigger3DPulse(e.clientX, e.clientY);
+
           const tabText = btn.innerText.trim();
           if (tabCodeData[cardKey] && tabCodeData[cardKey][tabText] && codeBox) {
             codeBox.innerHTML = tabCodeData[cardKey][tabText];
@@ -3628,320 +3635,339 @@
     // AI NEURAL NETWORK MESH & DEEP SPACE CANVAS — Three.js
     // Interactive Nodes · Synaptic Connections · Soft Particle Orbs
     // ═══════════════════════════════════════════════════════════
-    (function initNeuralSpaceBg() {
+    // ═══════════════════════════════════════════════════════════
+    // LAYOUT-ALIGNED AI NEURAL SYNAPSE & AMBIENT SPACE — Three.js
+    // Tailored for AI/ML Systems Engineer Portfolio
+    // Palette: #3B0270 | #6F00FF | #E9B3FB | #FFF1F1
+    // Layout: Left-Text Guard · Right-Anchored Neural Core · Scroll-Driven Nebula
+    // ═══════════════════════════════════════════════════════════
+    // ═══════════════════════════════════════════════════════════
+    // TEXT CONTENT-ALIGNED 3D AMBIENT BACKGROUND ENGINE — Three.js
+    // Unprojects DOM Text & Card Bounds Into 3D WebGL Space in Real-Time
+    // Palette: #3B0270 | #6F00FF | #E9B3FB | #FFF1F1
+    // ═══════════════════════════════════════════════════════════
+    (function init3DHyperspaceWarpStarfieldBg() {
       if (typeof THREE === 'undefined') return;
       const canvas = document.getElementById('spaceCanvas');
       if (!canvas) return;
 
       if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
 
-      // 1. WebGL Renderer
+      const isMobile = () => window.innerWidth < 768;
+
+      // 1. WebGL Renderer Setup
       const renderer = new THREE.WebGLRenderer({
         canvas, alpha: true, antialias: true, powerPreference: 'high-performance'
       });
       renderer.setSize(window.innerWidth, window.innerHeight);
-      renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
-      renderer.setClearColor(0x030712, 1); // Deepest dark midnight base
+      renderer.setPixelRatio(Math.min(window.devicePixelRatio, isMobile() ? 1.5 : 2));
+      renderer.setClearColor(0x090314, 1); // Midnight Deep Purple (#090314)
 
-      // 2. Scene & Camera
+      // 2. Scene & Camera Setup
       const scene = new THREE.Scene();
       const camera = new THREE.PerspectiveCamera(
-        60, window.innerWidth / window.innerHeight, 0.1, 1000
+        isMobile() ? 65 : 55, window.innerWidth / window.innerHeight, 0.1, 1000
       );
-      camera.position.z = 140;
+      camera.position.set(0, 0, 110);
 
-      // 3. Helper: Generate Soft Radial Particle Texture (NO SQUARE ARTIFACTS)
-      function createSoftDotTexture() {
+      // 3. Unprojection Helper: Map DOM element bounds directly to 3D world space coordinates
+      function get3DPosFromDOM(element, zDepth = 0) {
+        if (!element) return new THREE.Vector3(0, 0, zDepth);
+        const rect = element.getBoundingClientRect();
+        const xPix = rect.left + rect.width / 2;
+        const yPix = rect.top + rect.height / 2;
+
+        const vec = new THREE.Vector3(
+          (xPix / window.innerWidth) * 2 - 1,
+          -(yPix / window.innerHeight) * 2 + 1,
+          0.5
+        );
+        vec.unproject(camera);
+        const dir = vec.sub(camera.position).normalize();
+        const distance = (zDepth - camera.position.z) / dir.z;
+        return camera.position.clone().add(dir.multiplyScalar(distance));
+      }
+
+      // 4. Soft Textures Generator
+      function createSoftParticleTexture() {
         const c = document.createElement('canvas');
-        c.width = 64;
-        c.height = 64;
+        c.width = 64; c.height = 64;
         const ctx = c.getContext('2d');
         const grad = ctx.createRadialGradient(32, 32, 0, 32, 32, 32);
-        grad.addColorStop(0, 'rgba(255, 255, 255, 1)');
-        grad.addColorStop(0.25, 'rgba(255, 255, 255, 0.7)');
-        grad.addColorStop(0.6, 'rgba(255, 255, 255, 0.15)');
-        grad.addColorStop(1, 'rgba(255, 255, 255, 0)');
+        grad.addColorStop(0, 'rgba(255, 241, 241, 1)');       /* #FFF1F1 Cream Tint */
+        grad.addColorStop(0.25, 'rgba(233, 179, 251, 0.9)');  /* #E9B3FB Soft Lavender */
+        grad.addColorStop(0.6, 'rgba(111, 0, 255, 0.25)');   /* #6F00FF Electric Purple */
+        grad.addColorStop(1, 'rgba(9, 3, 20, 0)');
         ctx.fillStyle = grad;
-        ctx.beginPath();
-        ctx.arc(32, 32, 32, 0, Math.PI * 2);
-        ctx.fill();
+        ctx.beginPath(); ctx.arc(32, 32, 32, 0, Math.PI * 2); ctx.fill();
         return new THREE.CanvasTexture(c);
       }
 
-      function createGlowOrbTexture() {
+      function createNebulaGlowTexture() {
         const c = document.createElement('canvas');
-        c.width = 128;
-        c.height = 128;
+        c.width = 128; c.height = 128;
         const ctx = c.getContext('2d');
         const grad = ctx.createRadialGradient(64, 64, 0, 64, 64, 64);
-        grad.addColorStop(0, 'rgba(255, 255, 255, 0.5)');
-        grad.addColorStop(0.4, 'rgba(255, 255, 255, 0.12)');
-        grad.addColorStop(1, 'rgba(255, 255, 255, 0)');
-        ctx.fillStyle = grad;
-        ctx.fillRect(0, 0, 128, 128);
+        grad.addColorStop(0, 'rgba(233, 179, 251, 0.45)');
+        grad.addColorStop(0.35, 'rgba(111, 0, 255, 0.22)');
+        grad.addColorStop(0.7, 'rgba(59, 2, 112, 0.08)');
+        grad.addColorStop(1, 'rgba(9, 3, 20, 0)');
+        ctx.fillStyle = grad; ctx.fillRect(0, 0, 128, 128);
         return new THREE.CanvasTexture(c);
       }
 
-      const dotTexture = createSoftDotTexture();
-      const orbTexture = createGlowOrbTexture();
+      const particleTex = createSoftParticleTexture();
+      const glowTex = createNebulaGlowTexture();
 
-      // 4. Subtle Ambient Background Glow Orbs (Purple, Cyan, Indigo)
-      const orbGeo = new THREE.BufferGeometry();
-      const orbPos = new Float32Array([
-        -120, 80, -100,
-        120, -60, -120,
-        0, -100, -80,
-        -80, -90, -110
-      ]);
-      orbGeo.setAttribute('position', new THREE.BufferAttribute(orbPos, 3));
-      const orbColors = [
-        new THREE.Color(0x7c3aed), // Purple
-        new THREE.Color(0x06b6d4), // Cyan
-        new THREE.Color(0x4f46e5), // Indigo
-        new THREE.Color(0xec4899)  // Pink accent
-      ];
-      const orbColorArr = new Float32Array(12);
-      orbColors.forEach((col, idx) => {
-        orbColorArr[idx * 3] = col.r;
-        orbColorArr[idx * 3 + 1] = col.g;
-        orbColorArr[idx * 3 + 2] = col.b;
-      });
-      orbGeo.setAttribute('color', new THREE.BufferAttribute(orbColorArr, 3));
-
-      const orbMat = new THREE.PointsMaterial({
-        size: 260,
-        map: orbTexture,
-        vertexColors: true,
-        transparent: true,
-        opacity: 0.06, // Ultra subtle, non-intrusive ambient glow
-        depthWrite: false,
-        blending: THREE.AdditiveBlending
-      });
-      const ambientOrbs = new THREE.Points(orbGeo, orbMat);
-      scene.add(ambientOrbs);
-
-      // 5. AI Neural Network Constellation Mesh (Nodes & Synaptic Lines)
-      const NODE_COUNT = 100;
-      const BOUNDS = 220;
-      const nodeGeo = new THREE.BufferGeometry();
-      const nodePositions = new Float32Array(NODE_COUNT * 3);
-      const nodeVelocities = [];
-
-      for (let i = 0; i < NODE_COUNT; i++) {
-        nodePositions[i * 3] = (Math.random() - 0.5) * BOUNDS;
-        nodePositions[i * 3 + 1] = (Math.random() - 0.5) * BOUNDS;
-        nodePositions[i * 3 + 2] = (Math.random() - 0.5) * 100;
-        nodeVelocities.push({
-          x: (Math.random() - 0.5) * 0.06,
-          y: (Math.random() - 0.5) * 0.06,
-          z: (Math.random() - 0.5) * 0.03
-        });
-      }
-      nodeGeo.setAttribute('position', new THREE.BufferAttribute(nodePositions, 3));
-
-      const nodeMat = new THREE.PointsMaterial({
-        size: 3.6,
-        map: dotTexture,
-        color: 0xc084fc, // Purple AI nodes
-        transparent: true,
-        opacity: 0.7,
-        depthWrite: false,
-        blending: THREE.AdditiveBlending
-      });
-      const neuralNodes = new THREE.Points(nodeGeo, nodeMat);
-      scene.add(neuralNodes);
-
-      // Neural Synaptic Connection Lines
-      const MAX_CONNECTIONS = NODE_COUNT * 6;
-      const linePositions = new Float32Array(MAX_CONNECTIONS * 6);
-      const lineGeo = new THREE.BufferGeometry();
-      lineGeo.setAttribute('position', new THREE.BufferAttribute(linePositions, 3));
-      const lineMat = new THREE.LineBasicMaterial({
-        color: 0x6366f1, // Indigo lines
-        transparent: true,
-        opacity: 0.12,
-        depthWrite: false,
-        blending: THREE.AdditiveBlending
-      });
-      const neuralLines = new THREE.LineSegments(lineGeo, lineMat);
-      scene.add(neuralLines);
-
-      // 6. Deep Space Background Stars Layer
-      const STAR_COUNT = 1000;
+      // ═══════════════════════════════════════════════════════════
+      // 5. 3D HYPERSPACE FORWARD MOVING STARFIELD ENGINE (MATCHING SAMPLE)
+      // Stars continuously travel forward along Z-axis toward the user
+      // ═══════════════════════════════════════════════════════════
+      const STAR_COUNT = isMobile() ? 450 : 850;
       const starGeo = new THREE.BufferGeometry();
-      const starPos = new Float32Array(STAR_COUNT * 3);
-      for (let i = 0; i < STAR_COUNT * 3; i += 3) {
-        starPos[i] = (Math.random() - 0.5) * 450;
-        starPos[i + 1] = (Math.random() - 0.5) * 450;
-        starPos[i + 2] = (Math.random() - 0.5) * 250 - 40;
+
+      const starPositions = new Float32Array(STAR_COUNT * 3);
+      const starColors = new Float32Array(STAR_COUNT * 3);
+      const starSpeeds = new Float32Array(STAR_COUNT);
+      const starInitialZ = new Float32Array(STAR_COUNT);
+
+      // Color Palette Ratios: #FFF1F1 (Cream White), #E9B3FB (Lavender), #6F00FF (Electric Purple)
+      const colorPalette = [
+        new THREE.Color(0xFFF1F1), // Cream White
+        new THREE.Color(0xE9B3FB), // Soft Lavender
+        new THREE.Color(0x6F00FF), // Electric Purple
+        new THREE.Color(0xFFF1F1)  // Cream White Accent
+      ];
+
+      for (let i = 0; i < STAR_COUNT; i++) {
+        starPositions[i * 3] = (Math.random() - 0.5) * (isMobile() ? 320 : 500);
+        starPositions[i * 3 + 1] = (Math.random() - 0.5) * (isMobile() ? 380 : 550);
+        const z = -350 + Math.random() * 410; // Z range from -350 to +60
+        starPositions[i * 3 + 2] = z;
+        starInitialZ[i] = z;
+
+        const color = colorPalette[Math.floor(Math.random() * colorPalette.length)];
+        starColors[i * 3] = color.r;
+        starColors[i * 3 + 1] = color.g;
+        starColors[i * 3 + 2] = color.b;
+
+        // Base forward speed (0.6 to 1.8 units per frame)
+        starSpeeds[i] = 0.6 + Math.random() * 1.2;
       }
-      starGeo.setAttribute('position', new THREE.BufferAttribute(starPos, 3));
+
+      starGeo.setAttribute('position', new THREE.BufferAttribute(starPositions, 3));
+      starGeo.setAttribute('color', new THREE.BufferAttribute(starColors, 3));
 
       const starMat = new THREE.PointsMaterial({
-        size: 1.6,
-        map: dotTexture,
-        color: 0xe2e8f0,
+        size: isMobile() ? 2.2 : 2.8,
+        map: particleTex,
+        vertexColors: true,
         transparent: true,
-        opacity: 0.45,
+        opacity: 0.85,
         depthWrite: false,
         blending: THREE.AdditiveBlending
       });
-      const stars = new THREE.Points(starGeo, starMat);
-      scene.add(stars);
 
-      // 7. Dynamic Shooting Synapse Trails (Meteors)
-      const meteors = [];
-      let meteorTimer = 0;
-      let nextMeteor = 140 + Math.random() * 180;
+      const forwardStarField = new THREE.Points(starGeo, starMat);
+      scene.add(forwardStarField);
 
-      function spawnMeteor() {
-        const sx = (Math.random() - 0.3) * 280;
-        const sy = 80 + Math.random() * 60;
-        const len = 25 + Math.random() * 40;
-        const pts = [
-          new THREE.Vector3(sx, sy, 0),
-          new THREE.Vector3(sx - len, sy - len * 0.5, 0)
-        ];
-        const mGeo = new THREE.BufferGeometry().setFromPoints(pts);
-        const mMat = new THREE.LineBasicMaterial({
-          color: 0xc084fc,
-          transparent: true,
-          opacity: 0,
-          depthWrite: false,
-          blending: THREE.AdditiveBlending
-        });
-        const line = new THREE.Line(mGeo, mMat);
-        line.userData = {
-          life: 0,
-          maxLife: 35 + Math.random() * 25,
-          vx: -1.8 - Math.random() * 1.0,
-          vy: -0.9 - Math.random() * 0.5
-        };
-        scene.add(line);
-        meteors.push(line);
+      // ═══════════════════════════════════════════════════════════
+      // 6. VOLUMETRIC ATMOSPHERIC NEBULA SPOTLIGHTS (Tracking Sections)
+      // ═══════════════════════════════════════════════════════════
+      const nebulaGroup = new THREE.Group();
+      scene.add(nebulaGroup);
+
+      const SPOT_COUNT = 5;
+      const orbGeo = new THREE.BufferGeometry();
+      const orbPositions = new Float32Array(SPOT_COUNT * 3);
+      orbGeo.setAttribute('position', new THREE.BufferAttribute(orbPositions, 3));
+
+      const orbColors = new Float32Array([
+        0.435, 0.0, 1.0,     // #6F00FF Electric Purple (Hero Left)
+        0.914, 0.702, 0.984, // #E9B3FB Soft Lavender (Hero Right)
+        0.231, 0.008, 0.439, // #3B0270 Deep Purple (Tech Stack)
+        0.435, 0.0, 1.0,     // #6F00FF Electric Purple (Projects)
+        0.914, 0.702, 0.984  // #E9B3FB Soft Lavender (Contact)
+      ]);
+      orbGeo.setAttribute('color', new THREE.BufferAttribute(orbColors, 3));
+
+      const orbMat = new THREE.PointsMaterial({
+        size: isMobile() ? 280 : 420,
+        map: glowTex,
+        vertexColors: true,
+        transparent: true,
+        opacity: 0.18,
+        depthWrite: false,
+        blending: THREE.AdditiveBlending
+      });
+      const nebulaOrbs = new THREE.Points(orbGeo, orbMat);
+      nebulaGroup.add(nebulaOrbs);
+
+      // ═══════════════════════════════════════════════════════════
+      // 7. INTERACTIVE SHOCKWAVE WARP PULSE BURST
+      // ═══════════════════════════════════════════════════════════
+      const pulseBurstGroup = new THREE.Group();
+      scene.add(pulseBurstGroup);
+
+      const pulseRingGeo = new THREE.RingGeometry(2.5, 4, 48);
+      const pulseRingMat = new THREE.MeshBasicMaterial({ color: 0xE9B3FB, side: THREE.DoubleSide, transparent: true, opacity: 0, blending: THREE.AdditiveBlending });
+      const pulseRingMesh = new THREE.Mesh(pulseRingGeo, pulseRingMat);
+      pulseBurstGroup.add(pulseRingMesh);
+
+      // ═══════════════════════════════════════════════════════════
+      // 8. SECTION DOM TARGET TRACKING & INTERACTION STATE
+      // ═══════════════════════════════════════════════════════════
+      const domSections = {
+        hero: document.getElementById('hero'),
+        stack: document.getElementById('stack'),
+        projects: document.getElementById('projects'),
+        journey: document.getElementById('journey'),
+        certifications: document.getElementById('certifications'),
+        activities: document.getElementById('activities'),
+        contact: document.getElementById('contact')
+      };
+
+      const domHeroAvatar = document.querySelector('.hero-avatar-card');
+      const domHeroTitle = document.querySelector('.hero-title');
+      const domContactForm = document.querySelector('.contact-card');
+
+      let spotTargets = [
+        new THREE.Vector3(-70, 40, -110),
+        new THREE.Vector3(80, -30, -120),
+        new THREE.Vector3(0, 0, -100),
+        new THREE.Vector3(0, 0, -110),
+        new THREE.Vector3(0, 0, -90)
+      ];
+
+      function updateDOMSpotlights() {
+        if (domHeroTitle) spotTargets[0] = get3DPosFromDOM(domHeroTitle, -100);
+        if (domHeroAvatar) spotTargets[1] = get3DPosFromDOM(domHeroAvatar, -110);
+        if (domSections.stack) spotTargets[2] = get3DPosFromDOM(domSections.stack, -100);
+        if (domSections.projects) spotTargets[3] = get3DPosFromDOM(domSections.projects, -110);
+        if (domContactForm) spotTargets[4] = get3DPosFromDOM(domContactForm, -90);
+      }
+      updateDOMSpotlights();
+
+      // Mouse & Touch Interactivity
+      let mouseX = 0, mouseY = 0, targetMouseX = 0, targetMouseY = 0;
+      let warpBoost = 0;
+      let isScrolling = false;
+      let scrollTimer = null;
+
+      function updatePointerPos(x, y) {
+        targetMouseX = (x / window.innerWidth - 0.5) * 2;
+        targetMouseY = -(y / window.innerHeight - 0.5) * 2;
       }
 
-      // 8. Mouse & Scroll Controls
-      let mouseX = 0, mouseY = 0, targetMouseX = 0, targetMouseY = 0;
-      let scrollFrac = 0;
-
-      window.addEventListener('mousemove', (e) => {
-        targetMouseX = (e.clientX / window.innerWidth - 0.5) * 2;
-        targetMouseY = -(e.clientY / window.innerHeight - 0.5) * 2;
+      window.addEventListener('mousemove', (e) => updatePointerPos(e.clientX, e.clientY), { passive: true });
+      window.addEventListener('touchstart', (e) => {
+        if (e.touches.length > 0) updatePointerPos(e.touches[0].clientX, e.touches[0].clientY);
+      }, { passive: true });
+      window.addEventListener('touchmove', (e) => {
+        if (e.touches.length > 0) updatePointerPos(e.touches[0].clientX, e.touches[0].clientY);
       }, { passive: true });
 
       window.addEventListener('scroll', () => {
-        scrollFrac = window.scrollY / Math.max(1, document.body.scrollHeight - window.innerHeight);
+        updateDOMSpotlights();
+        isScrolling = true;
+        clearTimeout(scrollTimer);
+        scrollTimer = setTimeout(() => { isScrolling = false; }, 150);
       }, { passive: true });
 
       window.addEventListener('resize', () => {
         camera.aspect = window.innerWidth / window.innerHeight;
+        camera.fov = isMobile() ? 65 : 55;
         camera.updateProjectionMatrix();
         renderer.setSize(window.innerWidth, window.innerHeight);
+        renderer.setPixelRatio(Math.min(window.devicePixelRatio, isMobile() ? 1.5 : 2));
+        updateDOMSpotlights();
       });
 
-      // 9. Main Animation Loop
+      // 9. INTERACTIVE HYPER-WARP SHOCKWAVE PULSE HOOK
+      window.trigger3DPulse = function(clientX, clientY) {
+        if (typeof gsap !== 'undefined') {
+          // Temporary hyper-speed burst
+          warpBoost = 3.5;
+          gsap.to({ w: 3.5 }, {
+            w: 0, duration: 1.2, ease: 'power2.out',
+            onUpdate: function() { warpBoost = this.targets()[0].w; }
+          });
+
+          let pos = new THREE.Vector3(0, 0, 0);
+          if (typeof clientX === 'number' && typeof clientY === 'number') {
+            const vec = new THREE.Vector3((clientX / window.innerWidth) * 2 - 1, -(clientY / window.innerHeight) * 2 + 1, 0.5);
+            vec.unproject(camera);
+            const dir = vec.sub(camera.position).normalize();
+            pos = camera.position.clone().add(dir.multiplyScalar(-camera.position.z / dir.z));
+          }
+          pulseBurstGroup.position.copy(pos);
+
+          gsap.killTweensOf(pulseRingMesh.scale);
+          gsap.killTweensOf(pulseRingMat);
+
+          pulseRingMesh.scale.set(1, 1, 1);
+          pulseRingMat.opacity = 0.85;
+
+          gsap.to(pulseRingMesh.scale, { x: 24, y: 24, z: 24, duration: 0.9, ease: 'power2.out' });
+          gsap.to(pulseRingMat, { opacity: 0, duration: 0.9, ease: 'power2.out' });
+        }
+      };
+
+      // 10. MAIN ANIMATION LOOP (3D FORWARD HYPERSPACE WARP STARFIELD & NEBULA DRIFT)
       const clock = new THREE.Clock();
 
       (function animate() {
         requestAnimationFrame(animate);
         const time = clock.getElapsedTime();
 
-        // Smooth Mouse Inertia
+        // Smooth Pointer Steering Inertia
         mouseX += (targetMouseX - mouseX) * 0.04;
         mouseY += (targetMouseY - mouseY) * 0.04;
 
-        // Camera Parallax & Depth Motion
-        camera.position.x = mouseX * 16;
-        camera.position.y = mouseY * 10;
-        camera.position.z = 140 - scrollFrac * 35;
-        camera.lookAt(0, 0, 0);
+        // Scroll Progress
+        const scrollY = window.scrollY;
+        const totalHeight = Math.max(1, document.body.scrollHeight - window.innerHeight);
+        const globalScrollFrac = scrollY / totalHeight;
 
-        // Update Neural Nodes position & boundary bouncing
-        const posAttr = nodeGeo.attributes.position;
-        const positions = posAttr.array;
+        // Camera Steering & Depth Tilt
+        camera.position.x = mouseX * 12;
+        camera.position.y = mouseY * 8 - (globalScrollFrac * 10);
+        camera.lookAt(0, -globalScrollFrac * 6, 0);
 
-        for (let i = 0; i < NODE_COUNT; i++) {
-          const vel = nodeVelocities[i];
-          positions[i * 3] += vel.x;
-          positions[i * 3 + 1] += vel.y;
-          positions[i * 3 + 2] += vel.z;
+        // Calculate dynamic velocity multiplier (boosts speed on scroll and warp action)
+        const scrollVelocityFactor = isScrolling ? 2.2 : 1.0;
+        const currentSpeedMultiplier = scrollVelocityFactor + warpBoost;
 
-          // Bounce off bounds
-          if (Math.abs(positions[i * 3]) > BOUNDS / 2) vel.x *= -1;
-          if (Math.abs(positions[i * 3 + 1]) > BOUNDS / 2) vel.y *= -1;
-          if (Math.abs(positions[i * 3 + 2]) > 50) vel.z *= -1;
+        // ═══════════════════════════════════════════════════════════
+        // UPDATE 3D FORWARD STARFIELD POSITIONS (CONTINUOUS Z-FORWARD MOTION)
+        // ═══════════════════════════════════════════════════════════
+        const posAttr = starGeo.attributes.position;
+        const pArr = posAttr.array;
+
+        for (let i = 0; i < STAR_COUNT; i++) {
+          // Move star forward along Z axis toward camera
+          pArr[i * 3 + 2] += starSpeeds[i] * currentSpeedMultiplier;
+
+          // When star passes behind camera (+60 Z), reset to far distance (-350 Z)
+          if (pArr[i * 3 + 2] > 60) {
+            pArr[i * 3 + 2] = -350;
+            pArr[i * 3] = (Math.random() - 0.5) * (isMobile() ? 320 : 500);
+            pArr[i * 3 + 1] = (Math.random() - 0.5) * (isMobile() ? 380 : 550);
+          }
         }
         posAttr.needsUpdate = true;
 
-        // Dynamic Neural Synapse Lines updating
-        let lineIdx = 0;
-        const linePosAttr = lineGeo.attributes.position;
-        const linePositions = linePosAttr.array;
-        const CONNECT_DIST = 48;
+        // Update Spotlight Nebula Positions to track section targets
+        const orbPosAttr = orbGeo.attributes.position;
+        const oArr = orbPosAttr.array;
 
-        for (let i = 0; i < NODE_COUNT; i++) {
-          const x1 = positions[i * 3];
-          const y1 = positions[i * 3 + 1];
-          const z1 = positions[i * 3 + 2];
-
-          for (let j = i + 1; j < NODE_COUNT; j++) {
-            const x2 = positions[j * 3];
-            const y2 = positions[j * 3 + 1];
-            const z2 = positions[j * 3 + 2];
-
-            const dx = x1 - x2;
-            const dy = y1 - y2;
-            const dz = z1 - z2;
-            const distSq = dx * dx + dy * dy + dz * dz;
-
-            if (distSq < CONNECT_DIST * CONNECT_DIST) {
-              if (lineIdx * 6 + 5 < linePositions.length) {
-                linePositions[lineIdx * 6] = x1;
-                linePositions[lineIdx * 6 + 1] = y1;
-                linePositions[lineIdx * 6 + 2] = z1;
-                linePositions[lineIdx * 6 + 3] = x2;
-                linePositions[lineIdx * 6 + 4] = y2;
-                linePositions[lineIdx * 6 + 5] = z2;
-                lineIdx++;
-              }
-            }
-          }
+        for (let i = 0; i < SPOT_COUNT; i++) {
+          const target = spotTargets[i] || new THREE.Vector3(0, 0, -100);
+          oArr[i * 3] += (target.x - oArr[i * 3]) * 0.04;
+          oArr[i * 3 + 1] += (target.y + Math.sin(time * 0.2 + i) * 3 - oArr[i * 3 + 1]) * 0.04;
+          oArr[i * 3 + 2] += (target.z - oArr[i * 3 + 2]) * 0.04;
         }
-        lineGeo.setDrawRange(0, lineIdx * 2);
-        linePosAttr.needsUpdate = true;
-
-        // Slow rotations
-        stars.rotation.y = time * 0.006;
-        neuralNodes.rotation.y = time * 0.004;
-        neuralLines.rotation.y = time * 0.004;
-        ambientOrbs.rotation.z = Math.sin(time * 0.2) * 0.04;
-
-        // Subtle Star Twinkle Pulse
-        starMat.opacity = 0.45 + Math.sin(time * 1.5) * 0.12;
-
-        // Meteors update
-        meteorTimer++;
-        if (meteorTimer >= nextMeteor) {
-          spawnMeteor();
-          meteorTimer = 0;
-          nextMeteor = 160 + Math.random() * 200;
-        }
-
-        for (let i = meteors.length - 1; i >= 0; i--) {
-          const m = meteors[i];
-          m.userData.life++;
-          m.position.x += m.userData.vx;
-          m.position.y += m.userData.vy;
-          const p = m.userData.life / m.userData.maxLife;
-          m.material.opacity = p < 0.2 ? (p / 0.2) * 0.7 : (1 - p) * 0.7;
-          if (m.userData.life >= m.userData.maxLife) {
-            scene.remove(m);
-            m.geometry.dispose();
-            m.material.dispose();
-            meteors.splice(i, 1);
-          }
-        }
+        orbPosAttr.needsUpdate = true;
 
         renderer.render(scene, camera);
       })();
