@@ -2855,45 +2855,41 @@
           </div>
         </div>
 
-        <!-- FIG 04: Stock Price Prediction -->
+        <!-- FIG 04: Scrutinize -->
         <div class="project-card">
           <div class="project-card-header">
             <span class="project-fig-no">FIG. 04</span>
-            <span>SPEC: TIME-SERIES FORECASTING SYSTEM · 2024</span>
-            <div class="project-tabs" data-card="stockpred">
-              <button class="tab-btn active">MODEL_ARCH</button>
-              <button class="tab-btn">DEPLOY_STACK</button>
+            <span>SPEC: EVENT-DRIVEN GITHUB AUDIT &amp; DURABLE QUEUE ENGINE · 2026</span>
+            <div class="project-tabs" data-card="scrutinize">
+              <button class="tab-btn active">QUEUE_ENGINE</button>
+              <button class="tab-btn">RULE_ENGINE</button>
             </div>
           </div>
           <div class="project-body">
             <div>
               <div class="project-title-area">
-                <h3 class="project-name">AI Stock Price Prediction <span class="badge-sub">LSTM · GRU · Transformer ·
-                    FastAPI</span></h3>
-                <div class="project-tagline">AI-Powered Stock Price Prediction System</div>
+                <h3 class="project-name">Scrutinize <span class="badge-sub">TypeScript · Node.js · Probot · SQLite · Turso</span></h3>
+                <div class="project-tagline">Event-Driven GitHub Audit &amp; Durable Queue Engine</div>
               </div>
               <ul class="project-bullets">
-                <li>Built <strong>end-to-end time-series forecasting</strong> using LSTM, GRU, and Transformer models
-                  for multi-horizon stock price prediction.</li>
-                <li>Implemented <strong>backtesting, cross-validation, and ensemble modeling</strong> to improve
-                  generalization and reduce overfitting on financial data.</li>
-                <li>Deployed inference using <strong>FastAPI + Docker</strong> with monitoring for production-grade
-                  reliability.</li>
+                <li>Engineered an <strong>event-driven GitHub App in TypeScript/Node.js (Probot)</strong> to audit PR review thoroughness; decoupled incoming webhooks into a durable job queue, achieving <strong>under 50ms fast-ack responses</strong> to eliminate GitHub webhook timeouts.</li>
+                <li>Designed an <strong>idempotent queue architecture</strong> using SQLite UNIQUE header constraints to silently drop duplicate deliveries, paired with <strong>atomic row-level claims</strong> (<code>UPDATE ... WHERE status IN ('pending','failed')</code>) to prevent race conditions during concurrent worker sweeps.</li>
+                <li>Developed a <strong>deterministic rule engine</strong> calculating diff-based reading speed floors (0.4s per line, 30s minimum) and detecting AI co-author signatures; utilized Octokit pagination to bypass default 30-item API caps across PR commits, reviews, and inline comments.</li>
+                <li>Implemented a <strong>periodic self-healing sweep daemon</strong> for automatic crash recovery (resumes jobs stuck processing over 5 minutes or failed under 5 attempts) and migrated storage to <strong>Turso Cloud SQLite (@libsql/client)</strong> to prevent data loss on ephemeral PaaS containers.</li>
               </ul>
               <div class="project-actions">
-                <a href="https://github.com/Niranjan-Murugarasu024" target="_blank" rel="noopener noreferrer"
-                  class="ext-link-btn">GitHub Profile ↗</a>
+                <a href="https://github.com/Niranjan-Murugarasu024/Scrutinize" target="_blank" rel="noopener noreferrer"
+                  class="ext-link-btn">GitHub Repository ↗</a>
               </div>
             </div>
-            <div class="project-code-box" id="code-stockpred">
-              <div><span class="code-keyword">class</span> <span class="code-fn">EnsembleForecaster</span>:</div>
-              <div> models = [LSTM(), GRU(), Transformer()]</div>
-              <div> <span class="code-keyword">def</span> <span class="code-fn">predict</span>(self, X, horizon=<span
-                  class="code-string">30</span>):</div>
-              <div> preds = [m.forward(X) <span class="code-keyword">for</span> m <span class="code-keyword">in</span>
-                self.models]</div>
-              <div> <span class="code-keyword">return</span> torch.stack(preds).mean(dim=<span
-                  class="code-string">0</span>)</div>
+            <div class="project-code-box" id="code-scrutinize">
+              <div><span class="code-comment">// Idempotent Queue Claim &amp; Atomic Lock</span></div>
+              <div><span class="code-keyword">async function</span> <span class="code-fn">claimNextJob</span>(db) {</div>
+              <div>  <span class="code-keyword">return await</span> db.run(</div>
+              <div>    <span class="code-string">"UPDATE jobs SET status = 'processing', locked_at = ?"</span> +</div>
+              <div>    <span class="code-string">"WHERE id = (SELECT id FROM jobs WHERE status IN ('pending','failed') LIMIT 1)"</span></div>
+              <div>  );</div>
+              <div>}</div>
             </div>
           </div>
         </div>
@@ -2940,41 +2936,45 @@
           </div>
         </div>
 
-        <!-- FIG 06: Scrutinize -->
+        <!-- FIG 06: Stock Price Prediction -->
         <div class="project-card">
           <div class="project-card-header">
             <span class="project-fig-no">FIG. 06</span>
-            <span>SPEC: EVENT-DRIVEN GITHUB AUDIT &amp; DURABLE QUEUE ENGINE · 2026</span>
-            <div class="project-tabs" data-card="scrutinize">
-              <button class="tab-btn active">QUEUE_ENGINE</button>
-              <button class="tab-btn">RULE_ENGINE</button>
+            <span>SPEC: TIME-SERIES FORECASTING SYSTEM · 2024</span>
+            <div class="project-tabs" data-card="stockpred">
+              <button class="tab-btn active">MODEL_ARCH</button>
+              <button class="tab-btn">DEPLOY_STACK</button>
             </div>
           </div>
           <div class="project-body">
             <div>
               <div class="project-title-area">
-                <h3 class="project-name">Scrutinize <span class="badge-sub">TypeScript · Node.js · Probot · SQLite · Turso</span></h3>
-                <div class="project-tagline">Event-Driven GitHub Audit &amp; Durable Queue Engine</div>
+                <h3 class="project-name">AI Stock Price Prediction <span class="badge-sub">LSTM · GRU · Transformer ·
+                    FastAPI</span></h3>
+                <div class="project-tagline">AI-Powered Stock Price Prediction System</div>
               </div>
               <ul class="project-bullets">
-                <li>Engineered an <strong>event-driven GitHub App in TypeScript/Node.js (Probot)</strong> to audit PR review thoroughness; decoupled incoming webhooks into a durable job queue, achieving <strong>under 50ms fast-ack responses</strong> to eliminate GitHub webhook timeouts.</li>
-                <li>Designed an <strong>idempotent queue architecture</strong> using SQLite UNIQUE header constraints to silently drop duplicate deliveries, paired with <strong>atomic row-level claims</strong> (<code>UPDATE ... WHERE status IN ('pending','failed')</code>) to prevent race conditions during concurrent worker sweeps.</li>
-                <li>Developed a <strong>deterministic rule engine</strong> calculating diff-based reading speed floors (0.4s per line, 30s minimum) and detecting AI co-author signatures; utilized Octokit pagination to bypass default 30-item API caps across PR commits, reviews, and inline comments.</li>
-                <li>Implemented a <strong>periodic self-healing sweep daemon</strong> for automatic crash recovery (resumes jobs stuck processing over 5 minutes or failed under 5 attempts) and migrated storage to <strong>Turso Cloud SQLite (@libsql/client)</strong> to prevent data loss on ephemeral PaaS containers.</li>
+                <li>Built <strong>end-to-end time-series forecasting</strong> using LSTM, GRU, and Transformer models
+                  for multi-horizon stock price prediction.</li>
+                <li>Implemented <strong>backtesting, cross-validation, and ensemble modeling</strong> to improve
+                  generalization and reduce overfitting on financial data.</li>
+                <li>Deployed inference using <strong>FastAPI + Docker</strong> with monitoring for production-grade
+                  reliability.</li>
               </ul>
               <div class="project-actions">
-                <a href="https://github.com/Niranjan-Murugarasu024/Scrutinize" target="_blank" rel="noopener noreferrer"
-                  class="ext-link-btn">GitHub Repository ↗</a>
+                <a href="https://github.com/Niranjan-Murugarasu024" target="_blank" rel="noopener noreferrer"
+                  class="ext-link-btn">GitHub Profile ↗</a>
               </div>
             </div>
-            <div class="project-code-box" id="code-scrutinize">
-              <div><span class="code-comment">// Idempotent Queue Claim &amp; Atomic Lock</span></div>
-              <div><span class="code-keyword">async function</span> <span class="code-fn">claimNextJob</span>(db) {</div>
-              <div>  <span class="code-keyword">return await</span> db.run(</div>
-              <div>    <span class="code-string">"UPDATE jobs SET status = 'processing', locked_at = ?"</span> +</div>
-              <div>    <span class="code-string">"WHERE id = (SELECT id FROM jobs WHERE status IN ('pending','failed') LIMIT 1)"</span></div>
-              <div>  );</div>
-              <div>}</div>
+            <div class="project-code-box" id="code-stockpred">
+              <div><span class="code-keyword">class</span> <span class="code-fn">EnsembleForecaster</span>:</div>
+              <div> models = [LSTM(), GRU(), Transformer()]</div>
+              <div> <span class="code-keyword">def</span> <span class="code-fn">predict</span>(self, X, horizon=<span
+                  class="code-string">30</span>):</div>
+              <div> preds = [m.forward(X) <span class="code-keyword">for</span> m <span class="code-keyword">in</span>
+                self.models]</div>
+              <div> <span class="code-keyword">return</span> torch.stack(preds).mean(dim=<span
+                  class="code-string">0</span>)</div>
             </div>
           </div>
         </div>
