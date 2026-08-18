@@ -2940,50 +2940,41 @@
           </div>
         </div>
 
-        <!-- FIG 06: Neural Code Smell Detector -->
+        <!-- FIG 06: Scrutinize -->
         <div class="project-card">
           <div class="project-card-header">
             <span class="project-fig-no">FIG. 06</span>
-            <span>SPEC: HYBRID AI + RULE-BASED CODE QUALITY EVAL · 2025</span>
-            <div class="project-tabs" data-card="codesmell">
-              <button class="tab-btn active">MODEL_EVAL</button>
-              <button class="tab-btn">QUALITY_SCORE</button>
+            <span>SPEC: EVENT-DRIVEN GITHUB AUDIT &amp; DURABLE QUEUE ENGINE · 2026</span>
+            <div class="project-tabs" data-card="scrutinize">
+              <button class="tab-btn active">QUEUE_ENGINE</button>
+              <button class="tab-btn">RULE_ENGINE</button>
             </div>
           </div>
           <div class="project-body">
             <div>
               <div class="project-title-area">
-                <h3 class="project-name">Neural Code Smell Detector <span class="badge-sub">CodeBERT · AST · Radon ·
-                    Gradio</span></h3>
-                <div class="project-tagline">Hybrid AI + Rule-Based Code Quality Evaluation System</div>
+                <h3 class="project-name">Scrutinize <span class="badge-sub">TypeScript · Node.js · Probot · SQLite · Turso</span></h3>
+                <div class="project-tagline">Event-Driven GitHub Audit &amp; Durable Queue Engine</div>
               </div>
               <ul class="project-bullets">
-                <li>Fine-tuned <strong>Microsoft CodeBERT (PyTorch)</strong> for multi-label classification of 4 Python
-                  code smells on 1.9K GitHub refactoring samples.</li>
-                <li>Ran a stratified 80/20 held-out evaluation and diagnosed a <strong>severe class-imbalance failure
-                    mode</strong>: 99.5% F1 on majority class but 0% recall on 3 minority smell classes — surfaced only
-                  via <strong>per-class macro-F1 analysis</strong> (24.9% macro vs. 97.1% micro F1).</li>
-                <li>Combined model predictions with <strong>AST- and Radon-based static analysis</strong> (cyclomatic
-                  complexity, nesting depth, naming quality) into a single, explainable <strong>0–100 code-quality
-                    score</strong>.</li>
-                <li>Built a <strong>feedback layer</strong> surfacing specific score factors alongside automated
-                  refactoring suggestions, shipped through an interactive <strong>Gradio UI</strong>.</li>
+                <li>Engineered an <strong>event-driven GitHub App in TypeScript/Node.js (Probot)</strong> to audit PR review thoroughness; decoupled incoming webhooks into a durable job queue, achieving <strong>under 50ms fast-ack responses</strong> to eliminate GitHub webhook timeouts.</li>
+                <li>Designed an <strong>idempotent queue architecture</strong> using SQLite UNIQUE header constraints to silently drop duplicate deliveries, paired with <strong>atomic row-level claims</strong> (<code>UPDATE ... WHERE status IN ('pending','failed')</code>) to prevent race conditions during concurrent worker sweeps.</li>
+                <li>Developed a <strong>deterministic rule engine</strong> calculating diff-based reading speed floors (0.4s per line, 30s minimum) and detecting AI co-author signatures; utilized Octokit pagination to bypass default 30-item API caps across PR commits, reviews, and inline comments.</li>
+                <li>Implemented a <strong>periodic self-healing sweep daemon</strong> for automatic crash recovery (resumes jobs stuck processing over 5 minutes or failed under 5 attempts) and migrated storage to <strong>Turso Cloud SQLite (@libsql/client)</strong> to prevent data loss on ephemeral PaaS containers.</li>
               </ul>
               <div class="project-actions">
-                <a href="https://github.com/Niranjan-Murugarasu024" target="_blank" rel="noopener noreferrer"
-                  class="ext-link-btn">GitHub Profile ↗</a>
+                <a href="https://github.com/Niranjan-Murugarasu024/Scrutinize" target="_blank" rel="noopener noreferrer"
+                  class="ext-link-btn">GitHub Repository ↗</a>
               </div>
             </div>
-            <div class="project-code-box" id="code-codesmell">
-              <div><span class="code-comment"># Multi-label CodeBERT classifier</span></div>
-              <div><span class="code-keyword">class</span> <span class="code-fn">CodeSmellClassifier</span>(nn.Module):
-              </div>
-              <div> <span class="code-keyword">def</span> <span class="code-fn">forward</span>(self, input_ids, mask):
-              </div>
-              <div> emb = self.codebert(input_ids, mask).pooler_output</div>
-              <div> logits = self.classifier(emb) <span class="code-comment"># 4 smell labels</span></div>
-              <div> static = radon_metrics(self.src)</div>
-              <div> <span class="code-keyword">return</span> blend_score(logits, static)</div>
+            <div class="project-code-box" id="code-scrutinize">
+              <div><span class="code-comment">// Idempotent Queue Claim &amp; Atomic Lock</span></div>
+              <div><span class="code-keyword">async function</span> <span class="code-fn">claimNextJob</span>(db) {</div>
+              <div>  <span class="code-keyword">return await</span> db.run(</div>
+              <div>    <span class="code-string">"UPDATE jobs SET status = 'processing', locked_at = ?"</span> +</div>
+              <div>    <span class="code-string">"WHERE id = (SELECT id FROM jobs WHERE status IN ('pending','failed') LIMIT 1)"</span></div>
+              <div>  );</div>
+              <div>}</div>
             </div>
           </div>
         </div>
@@ -3743,6 +3734,21 @@
 <div>3. Business Impact    : ROI Alignment</div>
 <div>4. Confidence         : Technical Depth</div>
 <div>5. Structured Thinking: STAR Method Check</div>`
+      },
+      scrutinize: {
+        'QUEUE_ENGINE': `<div><span class="code-comment">// Idempotent Queue Claim &amp; Atomic Lock</span></div>
+<div><span class="code-keyword">async function</span> <span class="code-fn">claimNextJob</span>(db) {</div>
+<div>    <span class="code-keyword">return await</span> db.run(</div>
+<div>        <span class="code-string">"UPDATE jobs SET status = 'processing', locked_at = ?"</span> +</div>
+<div>        <span class="code-string">"WHERE id = (SELECT id FROM jobs WHERE status IN ('pending','failed') LIMIT 1)"</span></div>
+<div>    );</div>
+<div>}</div>`,
+        'RULE_ENGINE': `<div><span class="code-comment">// DETERMINISTIC AUDIT RULE ENGINE &amp; TURSO STORAGE</span></div>
+<div>Diff Reading Speed Floor : 0.4s / line (30s min threshold)</div>
+<div>Header Deduplication  : SQLite UNIQUE constraint</div>
+<div>Concurrency Lock       : Atomic row-level claim (UPDATE ... WHERE)</div>
+<div>Storage Migration      : Turso Cloud SQLite (@libsql/client)</div>
+<div>Crash Recovery Sweep   : Daemon resumes jobs stuck &gt; 5 min</div>`
       }
     };
 
